@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next export -o docs && touch ./docs/.nojekyll",
     "start": "next start"
   },
   "dependencies": {
