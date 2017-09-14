@@ -3,19 +3,19 @@ import theme from '../config/theme';
 
 const lightblueGlow = keyframes`
   from {
-    filter: drop-shadow(0px 0px 15px #AAF);
+    filter: drop-shadow(0px 0px 4px ${theme.lightblue});
   }
   to {
-    filter: drop-shadow(0px 0px 4px ${theme.lightblue});
+    filter: drop-shadow(0px 0px 15px #AAF);
   }
 `;
 
 const yellowGlow = keyframes`
   from {
-    filter: drop-shadow(0 0 15px #AD0);
+    filter: drop-shadow(0 0 4px ${theme.yellow});
   }
   to {
-    filter: drop-shadow(0 0 4px ${theme.yellow});
+    filter: drop-shadow(0 0 15px #AD0);
   }
 `;
 
@@ -56,7 +56,7 @@ const yellowBoot = keyframes`
   32% {
     opacity: .2;
   }
-  55% {
+  50% {
     opacity: 1;
   }
   70% {
@@ -69,8 +69,8 @@ const yellowBoot = keyframes`
 
 const getAnimation = ({ boot, yellow, lightblue }) => {
   if (boot) {
-    if (yellow) return `${yellowBoot} 1s linear`;
-    if (lightblue) return `${lightblueBoot} 1s linear`;
+    if (yellow) return `${yellowBoot} 1s step-start forwards`;
+    if (lightblue) return `${lightblueBoot} 1s step-start forwards`;
   } else {
     if (yellow) return `${yellowGlow} 0.5s ease-in-out infinite alternate`;
     if (lightblue) return `${lightblueGlow} 0.5s ease-in-out infinite alternate`;
@@ -116,7 +116,7 @@ export default class extends React.Component {
     boot: true,
   };
   componentDidMount() {
-    setTimeout(() => this.setState({ boot: false }), 700);
+    setTimeout(() => this.setState({ boot: false }), 500);
   }
   render() {
     return (
