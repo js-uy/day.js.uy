@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import theme from '../config/theme';
-import GlowingLogo from './GlowingLogo';
+import NeonLogo from './NeonLogo';
 
 const Hero = styled.section`
   align-items: center;
@@ -55,6 +55,6 @@ export default () => (
       <H2>24th & 25th Nov | Montevideo, Uruguay</H2>
       <CallToAction href="#tickets">Get tickets</CallToAction>
     </TextContainer>
-    <GlowingLogo scale="1.5" />
+    <NeonLogo scale="1.5 " />
   </Hero>
 );

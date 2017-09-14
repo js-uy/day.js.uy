@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import theme from '../config/theme';
+import NeonLogo from './NeonLogo';
 
 const Header = styled.header`
   align-items: center;
