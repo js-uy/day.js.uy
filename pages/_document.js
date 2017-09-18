@@ -1,5 +1,15 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet, ThemeProvider } from 'styled-components';
+import { ServerStyleSheet, ThemeProvider, injectGlobal } from 'styled-components';
+
+injectGlobal`
+  body {
+    font-family: 'Roboto Mono', monospace;
+    line-height: 2em;
+  }
+  * {
+    box-sizing: border-box;
+  }
+`;
 
 export default class MyDocument extends Document {
   render() {
@@ -23,11 +33,6 @@ export default class MyDocument extends Document {
           />
           {styleTags}
         </Head>
-        <style jsx>{`
-          body {
-            font-family: 'Roboto Mono', monospace;
-          }
-        `}</style>
         <body>
           {main}
           <NextScript />

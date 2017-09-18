@@ -1,128 +1,55 @@
+import { number, bool } from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import theme from '../config/theme';
-
-const lightblueGlow = keyframes`
-  from {
-    filter: drop-shadow(0px 0px 4px ${theme.lightblue});
-  }
-  to {
-    filter: drop-shadow(0px 0px 15px #AAF);
-  }
-`;
-
-const yellowGlow = keyframes`
-  from {
-    filter: drop-shadow(0 0 4px ${theme.yellow});
-  }
-  to {
-    filter: drop-shadow(0 0 15px #AD0);
-  }
-`;
-
-const lightblueBoot = keyframes`
-  0% {
-    opacity: 1;
-  }
-  5% {
-    opacity: .2
-  }
-  10% {
-    opacity: 1;
-  }
-  40% {
-    opacity: .2;
-  }
-  50% {
-    opacity: 1;
-  }
-  75% {
-    opacity: .2;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
-
-const yellowBoot = keyframes`
-  0% {
-    opacity: 1
-  }
-  10% {
-    opacity: .2
-  }
-  23% {
-    opacity: 1;
-  }
-  32% {
-    opacity: .2;
-  }
-  50% {
-    opacity: 1;
-  }
-  70% {
-    opacity: .2;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
-
-const getAnimation = ({ boot, yellow, lightblue }) => {
-  if (boot) {
-    if (yellow) return `${yellowBoot} 1s step-start forwards`;
-    if (lightblue) return `${lightblueBoot} 1s step-start forwards`;
-  } else {
-    if (yellow) return `${yellowGlow} 0.5s ease-in-out infinite alternate`;
-    if (lightblue) return `${lightblueGlow} 0.5s ease-in-out infinite alternate`;
-  }
-};
-
-const getShadow = ({ yellow, lightblue }) => `
-  drop-shadow(
-    0 0 4px ${(lightblue && theme.lightblue) || (yellow && theme.yellow)}
-  )
-`;
-
-const Glow = styled.img`
-  filter: ${props => getShadow(props)};
-  animation: ${props => getAnimation(props)};
-  transition: all 0.5s ease;
-`;
+import Glow from './Glow';
 
 const Container = styled.figure`
-  height: 300px;
+  height: ${props => 300 * props.scale}px;
   position: relative;
-  width: 300px;
-  transform: scale(${props => props.scale});
+  width: ${props => 300 * props.scale}px;
 `;
 
 const JS = styled(Glow)`
-  bottom: 10px;
-  left: 40px;
+  bottom: ${props => 10 * props.scale}px;
+  height: ${props => 250 * props.scale}px;
+  left: ${props => 40 * props.scale}px;
   position: absolute;
+  width: ${props => 250 * props.scale}px;
 `;
 
 const Day = styled(Glow)`
-  bottom: 20px;
-  left: 30px;
+  bottom: ${props => 20 * props.scale}px;
+  height: ${props => 140 * props.scale}px;
+  left: ${props => 30 * props.scale}px;
   position: absolute;
+  width: ${props => 210 * props.scale}px;
 `;
 
 export default class extends React.Component {
+  static propTypes = {
+    scale: number,
+    noGlow: bool,
+  };
   static defaultProps = {
     scale: 1,
   };
-  state = {
-    boot: true,
-  };
-  componentDidMount() {
-    setTimeout(() => this.setState({ boot: false }), 500);
-  }
   render() {
     return (
       <Container scale={this.props.scale}>
-        <JS src="/static/js.svg" boot={this.state.boot} lightblue />
-        <Day src="/static/day.svg" boot={this.state.boot} yellow />
+        <JS
+          bootFactor={7}
+          color={theme.lightblue}
+          noGlow={this.props.noGlow}
+          scale={this.props.scale}
+          src="/static/js.svg"
+        />
+        <Day
+          bootFactor={1}
+          color={theme.yellow}
+          noGlow={this.props.noGlow}
+          scale={this.props.scale}
+          src="/static/day.svg"
+        />
       </Container>
     );
   }

@@ -6,5 +6,5 @@ export default {
   white: '#fff',
   black: '#0f1010',
   spacing: 8,
-  headerHeight: '60px',
+  headerHeight: 60,
 };

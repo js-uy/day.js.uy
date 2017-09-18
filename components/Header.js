@@ -7,9 +7,14 @@ const Header = styled.header`
   background-color: ${theme.black};
   border-bottom: 2px solid ${theme.gray};
   display: flex;
-  height: ${theme.headerHeight};
+  height: ${theme.headerHeight}px;
   justify-content: space-between;
+  left: 0;
   padding: 0 ${theme.spacing * 8}px;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 6666;
 `;
 
 const Img = styled.img`
@@ -33,12 +38,12 @@ const Anchor = styled.a`
 
 export default () => (
   <Header>
-    <Img src="/static/js-day.png" />
+    <NeonLogo noGlow scale="0.18" />
     <Nav>
       <Anchor href="#about">About</Anchor>
       <Anchor href="#speakers">Speakers</Anchor>
-      <Anchor href="#schedule">Schedule</Anchor>
-      <Anchor href="#tickets">Tickets</Anchor>
+      {/* <Anchor href="#schedule">Schedule</Anchor> */}
+      {/* <Anchor href="#tickets">Tickets</Anchor> */}
       <Anchor href="#sponsors">Sponsors</Anchor>
       <Anchor href="#venue">Venue</Anchor>
     </Nav>
