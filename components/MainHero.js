@@ -14,7 +14,7 @@ const LogoContainer = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  padding-right: ${theme.spacing * 8}px;
+  padding-right: ${theme.gridSpacing}px;
 `;
 
 const H1 = styled.h1`
@@ -32,7 +32,7 @@ const CallToAction = styled.a`
   background-color: ${theme.yellow};
   border: 0;
   color: ${theme.black};
-  padding: ${theme.spacing * 2}px ${theme.spacing * 8}px;
+  padding: ${theme.gridSpacing / 2}px ${theme.gridSpacing}px;
   text-decoration: none;
 `;
 

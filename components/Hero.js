@@ -10,5 +10,5 @@ export default styled.section`
   max-width: 100vw;
   overflow: hidden;
   padding: ${props => (props.noPadding ? 0 : theme.headerHeight)}px
-    ${props => (props.noPadding ? 0 : theme.spacing * 8)}px 0;
+    ${props => (props.noPadding ? 0 : theme.horizontalPadding)} 0;
 `;

@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "next build && next export -o docs && touch ./docs/.nojekyll",
+    "build":
+      "next build && next export -o docs && touch ./docs/.nojekyll && echo 'day.js.uy' > ./docs/CNAME",
     "start": "next start",
     "precommit": "lint-staged"
   },
@@ -16,6 +17,7 @@
     "next": "^3.0.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-headroom": "^2.1.6",
     "styled-components": "^2.1.2"
   },
   "devDependencies": {

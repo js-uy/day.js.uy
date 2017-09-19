@@ -10,14 +10,16 @@ const Container = styled.div`
   width: 50vw;
 `;
 
+const Text = styled.p`text-align: center;`;
+
 export default () => (
   <Hero backgroundColor={theme.blue} id="about">
     <Container>
       <Glow src="/static/about.svg" color={theme.lightblue} />
-      <p>
-        A unique experience for all 200 attendees with workshops and social events the first day and
-        a single track conference the second day.
-      </p>
+      <Text>
+        A single track, two day conference built for and by the JS developer community. A
+        conference, a community gathering and a cellebration party.
+      </Text>
     </Container>
   </Hero>
 );

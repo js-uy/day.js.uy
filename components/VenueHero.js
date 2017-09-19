@@ -9,15 +9,6 @@ const Container = styled.div`
   width: 100%;
 `;
 
-const Title = styled.figure`
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 130px;
-  transform: translateX(-72px);
-  width: 250px;
-`;
-
 const VenuePics = styled.figure`
   background-image: url('/static/venue-pics.jpg');
   background-position: center;
@@ -33,7 +24,8 @@ const VenueInfo = styled.div`
   flex-direction: column;
   flex: 233;
   justify-content: center;
-  padding: ${theme.spacing * 4}px;
+  align-items: flex-start;
+  padding: ${theme.gridSpacing * 2}px;
 `;
 
 const Link = styled.a`color: ${theme.yellow};`;
@@ -43,12 +35,14 @@ const H2 = styled.h2`
   text-transform: uppercase;
 `;
 
+const VenueGlow = styled(Glow)`transform: translateX(-15px);`;
+
 export default () => (
   <Hero backgroundColor={'#0d0e0e' || theme.black} id="venue" noPadding>
     <Container>
       <VenuePics />
       <VenueInfo>
-        <Title style={{ backgroundImage: 'url("/static/venue.png")' }} />
+        <VenueGlow src="/static/venue.svg" color={theme.lightblue} />
         <div>
           <H2>WHERE</H2>
           <p>

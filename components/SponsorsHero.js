@@ -11,22 +11,14 @@ const Container = styled.div`
   width: 50vw;
 `;
 
-const Title = styled.figure`
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 175px;
-  width: 350px;
-`;
-
 const Text = styled.p`text-align: center;`;
 
 const Link = styled.a`color: ${theme.yellow};`;
 
 export default () => (
-  <Hero backgroundColor={'#101b31' || theme.blue} id="sponsors">
+  <Hero backgroundColor={theme.blue} id="sponsors">
     <Container>
-      <Title style={{ backgroundImage: 'url("/static/sponsors.png")' }} />
+      <Glow src="/static/sponsors.svg" color={theme.lightblue} />
       <Text>
         We're looking for partners to make this event possible.
         <br />

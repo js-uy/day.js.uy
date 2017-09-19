@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 const glowAnimation = ({ color }) => keyframes`
   from {
-    filter: drop-shadow(0px 0px 4px ${color});
+    filter: drop-shadow(0px 0px 7px ${color});
   }
   to {
     filter: drop-shadow(0px 0px 15px ${color});

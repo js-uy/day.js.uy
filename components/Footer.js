@@ -9,7 +9,7 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: ${theme.spacing * 3}px;
+  padding: ${theme.gridSpacing}px;
 `;
 
 const Link = styled.a`color: ${theme.yellow};`;

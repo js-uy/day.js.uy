@@ -4,10 +4,15 @@ import { ServerStyleSheet, ThemeProvider, injectGlobal } from 'styled-components
 injectGlobal`
   body {
     font-family: 'Roboto Mono', monospace;
+    -webkit-font-smoothing: antialiased;
     line-height: 2em;
   }
   * {
     box-sizing: border-box;
+  }
+  figure {
+    margin: 0;
+    padding: 0;
   }
 `;
 
