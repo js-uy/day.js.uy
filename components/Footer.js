@@ -29,11 +29,11 @@ export default () => (
       </Link>
     </p>
     <p>JS Day, all rights reserved © 2017</p>
-    <p>
+    {/* <p>
       Designed by{' '}
       <Link href="http://hellohello.is/" target="_blank">
         hellohello
       </Link>.
-    </p>
+    </p> */}
   </Footer>
 );

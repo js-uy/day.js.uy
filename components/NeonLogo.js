@@ -7,20 +7,21 @@ const Container = styled.figure`
   height: ${props => 300 * props.scale}px;
   position: relative;
   width: ${props => 300 * props.scale}px;
+  background: radial-gradient(${theme.blue} 50%, transparent, transparent);
 `;
 
 const JS = styled(Glow)`
-  bottom: ${props => 10 * props.scale}px;
+  bottom: ${props => 5 * props.scale}px;
   height: ${props => 250 * props.scale}px;
-  left: ${props => 40 * props.scale}px;
+  left: ${props => 35 * props.scale}px;
   position: absolute;
   width: ${props => 250 * props.scale}px;
 `;
 
 const Day = styled(Glow)`
-  bottom: ${props => 20 * props.scale}px;
+  bottom: ${props => 35 * props.scale}px;
   height: ${props => 140 * props.scale}px;
-  left: ${props => 30 * props.scale}px;
+  left: ${props => 25 * props.scale}px;
   position: absolute;
   width: ${props => 210 * props.scale}px;
 `;
