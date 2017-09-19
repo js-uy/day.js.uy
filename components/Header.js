@@ -47,6 +47,12 @@ const LogoContainer = styled.div`
   width: ${theme.headerHeight}px;
 `;
 
+const Logo = styled.img`
+  position: relative;
+  top: 2px;
+  left: -2px;
+`;
+
 export default class Header extends React.Component {
   state = {
     pinned: false,
@@ -62,7 +68,7 @@ export default class Header extends React.Component {
       <Headroom onPin={this.onPin} onUnpin={this.onUnpin} onUnfix={this.onUnpin}>
         <Container yellow={this.state.pinned}>
           <LogoContainer pinned={this.state.pinned}>
-            <NeonLogo noGlow scale="0.18" />
+            <Logo src="/static/header-logo.svg" />
           </LogoContainer>
           <Nav>
             <Anchor black={this.state.pinned} href="#about">
