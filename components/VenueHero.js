@@ -27,6 +27,10 @@ const VenueInfo = styled.div`
   justify-content: center;
   align-items: flex-start;
   padding: ${theme.gridSpacing * 2}px;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    padding: ${theme.gridSpacing}px;
+  }
 `;
 
 const Link = styled.a`color: ${theme.yellow};`;
