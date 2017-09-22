@@ -8,9 +8,21 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 50vw;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    width: 100vw;
+    padding: ${theme.gridSpacing}px;
+    align-items: flex-start;
+  }
 `;
 
-const Text = styled.p`text-align: center;`;
+const Text = styled.p`
+  text-align: center;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    text-align: left;
+  }
+`;
 
 export default () => (
   <Hero backgroundColor={theme.blue} id="about">
@@ -18,7 +30,7 @@ export default () => (
       <Glow src="/static/about.svg" color={theme.lightblue} />
       <Text>
         A single track, two day conference built for and by the JS developer community. A
-        conference, a community gathering and a cellebration party.
+        conference, a community gathering and a celebration party.
       </Text>
     </Container>
   </Hero>

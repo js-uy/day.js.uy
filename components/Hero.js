@@ -10,4 +10,8 @@ export default styled.section`
   max-width: 100vw;
   overflow: hidden;
   padding: 0 ${props => (props.noPadding ? 0 : theme.horizontalPadding)};
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    height: unset;
+  }
 `;

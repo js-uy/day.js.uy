@@ -9,9 +9,21 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 50vw;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    align-items: flex-start;
+    padding: ${theme.gridSpacing}px;
+    width: 100vw;
+  }
 `;
 
-const Text = styled.p`text-align: center;`;
+const Text = styled.p`
+  text-align: center;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    text-align: left;
+  }
+`;
 
 const Link = styled.a`color: ${theme.yellow};`;
 

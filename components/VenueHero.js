@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import theme from '../config/theme';
 import Glow from './Glow';
 import Hero from './Hero';
+import { Mobile, Desktop } from './MediaQueries';
 
 const Container = styled.div`
   display: flex;
@@ -40,7 +41,9 @@ const VenueGlow = styled(Glow)`transform: translateX(-15px);`;
 export default () => (
   <Hero backgroundColor={'#0d0e0e' || theme.black} id="venue" noPadding>
     <Container>
-      <VenuePics />
+      <Desktop>
+        <VenuePics />
+      </Desktop>
       <VenueInfo>
         <VenueGlow src="/static/venue.svg" color={theme.lightblue} />
         <div>

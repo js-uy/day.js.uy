@@ -1,5 +1,6 @@
 import { number, string, bool } from 'prop-types';
 import styled, { keyframes } from 'styled-components';
+import theme from '../config/theme';
 
 const glowAnimation = ({ color }) => keyframes`
   from {
@@ -55,6 +56,10 @@ const Glow = styled.img`
   filter: drop-shadow(0 0 4px ${props => props.color});
   animation: ${props => !props.noGlow && getAnimation(props)};
   transition: all 0.5s ease;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    height: 60px;
+  }
 `;
 
 export default class extends React.Component {

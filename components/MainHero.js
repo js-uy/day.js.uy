@@ -2,12 +2,16 @@ import styled from 'styled-components';
 import theme from '../config/theme';
 import NeonLogo from './NeonLogo';
 import Hero from './Hero';
+import { Mobile, Desktop } from './MediaQueries';
 
 const TextContainer = styled.div`
   align-items: flex-start;
   display: flex;
   flex-direction: column;
   flex: 1;
+  @media (max-width: ${theme.mobileThreshold}px) {
+    padding: 30px;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -50,9 +54,18 @@ export default () => (
       <H1>
         A community driven conference<br />for JavaScript developers
       </H1>
-      <H2>24th & 25th Nov | Montevideo, Uruguay</H2>
+      <H2>
+        24th & 25th Nov
+        <Desktop component="span">{' | '}</Desktop>
+        <Mobile>
+          <br />
+        </Mobile>
+        Montevideo, Uruguay
+      </H2>
       <CallToAction href="#tickets">Get tickets</CallToAction>
     </TextContainer>
-    <NeonLogo scale="1.7" />
+    <Desktop>
+      <NeonLogo scale={1.7} />
+    </Desktop>
   </Hero>
 );

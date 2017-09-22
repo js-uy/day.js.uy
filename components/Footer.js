@@ -16,7 +16,7 @@ const Link = styled.a`color: ${theme.yellow};`;
 
 export default () => (
   <Footer>
-    <NeonLogo scale="0.18" />
+    <img src="/static/header-logo.svg" />
     <p>
       <Link href="https://twitter.com/JSDayUY" target="_blank">
         Twitter
@@ -28,7 +28,7 @@ export default () => (
         Slack
       </Link>
     </p>
-    <p>JS Day, all rights reserved © 2017</p>
+    <small>All rights reserved © 2017</small>
     {/* <p>
       Designed by{' '}
       <Link href="http://hellohello.is/" target="_blank">
