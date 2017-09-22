@@ -43,9 +43,17 @@ const CallToAction = styled.a`
   background-color: ${theme.yellow};
   border: 0;
   color: ${theme.black};
+  cursor: ${props => props.wait && 'wait'};
   font-weight: bold;
   padding: 5px 40px;
   text-decoration: none;
+  &:hover {
+    opacity: ${props => props.wait && '0.5'};
+  }
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    opacity: ${props => props.wait && '0.5'};
+  }
 `;
 
 export default () => (
@@ -62,7 +70,9 @@ export default () => (
         </Mobile>
         Montevideo, Uruguay
       </H2>
-      <CallToAction href="#tickets">Get tickets</CallToAction>
+      <CallToAction href="#tickets" wait>
+        Get tickets
+      </CallToAction>
     </TextContainer>
     <Desktop>
       <NeonLogo scale={1.7} />

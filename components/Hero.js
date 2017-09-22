@@ -13,5 +13,7 @@ export default styled.section`
 
   @media (max-width: ${theme.mobileThreshold}px) {
     height: unset;
+    flex-direction: column;
+    align-items: stretch;
   }
 `;

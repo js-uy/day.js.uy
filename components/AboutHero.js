@@ -2,8 +2,10 @@ import styled from 'styled-components';
 import theme from '../config/theme';
 import Glow from './Glow';
 import Hero from './Hero';
+import { Mobile, Desktop } from './MediaQueries';
 
-const Container = styled.div`
+const InfoContainer = styled.div`
+  align-items: flex-start;
   color: ${theme.white};
   display: flex;
   flex-direction: column;
@@ -12,26 +14,38 @@ const Container = styled.div`
   @media (max-width: ${theme.mobileThreshold}px) {
     width: 100vw;
     padding: ${theme.gridSpacing}px;
-    align-items: flex-start;
   }
 `;
 
-const Text = styled.p`
-  text-align: center;
+const Text = styled.p`text-align: left;`;
+
+const AboutGlow = styled(Glow)`
+  transform: translateX(-13px);
 
   @media (max-width: ${theme.mobileThreshold}px) {
-    text-align: left;
+    transform: translateX(-9px);
+  }
+`;
+
+const HelloWorld = styled.img`
+  margin-top: ${theme.gridSpacing}px;
+  width: 570px;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    width: 80%;
+    align-self: center;
   }
 `;
 
 export default () => (
   <Hero backgroundColor={theme.blue} id="about">
-    <Container>
-      <Glow src="/static/about.svg" color={theme.lightblue} />
+    <HelloWorld src="/static/hello-world.gif" />
+    <InfoContainer>
+      <AboutGlow src="/static/about.svg" color={theme.lightblue} />
       <Text>
         A single track, two day conference built for and by the JS developer community. A
         conference, a community gathering and a celebration party.
       </Text>
-    </Container>
+    </InfoContainer>
   </Hero>
 );
