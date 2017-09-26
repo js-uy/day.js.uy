@@ -46,6 +46,7 @@ export default () => (
         JS Day is not just conference but a gathering, a celebration party where all the JS
         community meets and commemorates another great year.
         <br />
+        <br />
         An easy going event built for and by developers starting with a day of workshops and
         integration activities, followed by a conference day with plenty of time to chat, share
         experiences and make friends from the community between talks.
