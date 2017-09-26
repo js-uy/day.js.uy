@@ -115,7 +115,7 @@ const Slider = ({ children, style }) => (
 );
 
 export default () => (
-  <Hero backgroundColor={theme.black} id="speakers" noHeight>
+  <Hero backgroundColor={theme.black} id="speakers">
     <Container>
       <SpeakersGlow src="/static/speakers.svg" color={theme.lightblue} />
       <Desktop style={{ alignSelf: 'center' }}>

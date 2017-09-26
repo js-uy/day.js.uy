@@ -90,7 +90,7 @@ const Bronze = Sponsor.extend`
 `;
 
 export default () => (
-  <Hero backgroundColor={theme.blue} id="sponsors">
+  <Hero backgroundColor={theme.blue} id="sponsors" noHeight>
     <Container>
       <SponsorsGlow src="/static/sponsors.svg" color={theme.lightblue} />
       <SponsorsContainer>
