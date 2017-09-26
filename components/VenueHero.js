@@ -40,7 +40,12 @@ const H2 = styled.h2`
   text-transform: uppercase;
 `;
 
-const VenueGlow = styled(Glow)`transform: translateX(-15px);`;
+const VenueGlow = styled(Glow)`
+  transform: translateX(-15px);
+  @media (max-width: ${theme.mobileThreshold}px) {
+    transform: translateX(-10px);
+  }
+`;
 
 export default () => (
   <Hero backgroundColor={'#0d0e0e' || theme.black} id="venue" noPadding>

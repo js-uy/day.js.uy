@@ -6,6 +6,7 @@ export const gridColumnWidth = 70;
 export const gridSpacing = 30;
 export const headerHeight = 60;
 export const lightblue = '#42f0ff';
+export const lightgray = '#ccc';
 export const mobileThreshold = 992;
 export const white = '#fff';
 export const yellow = '#faf200';
@@ -23,6 +24,7 @@ export default {
   headerHeight,
   horizontalPadding,
   lightblue,
+  lightgray,
   mobileThreshold,
   white,
   yellow,

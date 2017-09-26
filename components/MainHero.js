@@ -47,12 +47,15 @@ const CallToAction = styled.a`
   font-weight: bold;
   padding: 5px 40px;
   text-decoration: none;
+
   &:hover {
     opacity: ${props => props.wait && '0.5'};
   }
 
   @media (max-width: ${theme.mobileThreshold}px) {
     opacity: ${props => props.wait && '0.5'};
+    text-align: center;
+    width: 100%;
   }
 `;
 

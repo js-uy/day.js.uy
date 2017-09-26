@@ -19,7 +19,7 @@ const JS = styled(Glow)`
 `;
 
 const Day = styled(Glow)`
-  bottom: ${props => 35 * props.scale}px;
+  bottom: ${props => 20 * props.scale}px;
   height: ${props => 140 * props.scale}px;
   left: ${props => 25 * props.scale}px;
   position: absolute;

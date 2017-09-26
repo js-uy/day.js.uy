@@ -34,13 +34,15 @@ const Container = styled.div`
 
 const Link = styled.a`color: ${theme.yellow};`;
 
-const Avatar = styled.div`
+const AvatarContainer = styled.div`position: relative;`;
+
+const Avatar = styled.figure`
   background-image: url('${props => props.src}');
   background-position: center;
   background-size: cover;
+  filter: grayscale(100%) contrast(180%);
   height: 229px;
-  margin-bottom: 10px;
-  position: relative;
+  margin-bottom: 15px;
   width: 222px;
 `;
 
@@ -50,7 +52,7 @@ const AvatarOverlay = styled.div`
   display: block;
   height: 100%;
   left: 0;
-  opacity: 0.2;
+  opacity: 0.5;
   position: absolute;
   top: 0;
   width: 100%;
@@ -73,22 +75,32 @@ const Name = styled.p`
   vertical-align: top;
 `;
 
-const Twitter = styled.small`
+const Twitter = styled.a`
   color: ${theme.lightblue};
   display: block;
+  font-size: 0.8em;
   line-height: 1.5em;
   &::before {
     content: '@';
   }
 `;
 
+const SpeakersGlow = styled(Glow)`
+  @media (max-width: ${theme.mobileThreshold}px) {
+    transform: translateX(-5px);
+  }
+`;
+
 const Speaker = ({ name, twitter, avatar }) => (
   <SpeakerContainer>
-    <Avatar src={avatar}>
+    <AvatarContainer>
+      <Avatar src={avatar} />
       <AvatarOverlay />
-    </Avatar>
+    </AvatarContainer>
     <Name>{name}</Name>
-    <Twitter>{twitter}</Twitter>
+    <Twitter href={`https://twitter.com/${twitter}`} target="_blank">
+      {twitter}
+    </Twitter>
   </SpeakerContainer>
 );
 
@@ -103,9 +115,9 @@ const Slider = ({ children, style }) => (
 );
 
 export default () => (
-  <Hero backgroundColor={theme.black} id="speakers">
+  <Hero backgroundColor={theme.black} id="speakers" noHeight>
     <Container>
-      <Glow src="/static/speakers.svg" color={theme.lightblue} />
+      <SpeakersGlow src="/static/speakers.svg" color={theme.lightblue} />
       <Desktop style={{ alignSelf: 'center' }}>
         {matches => (
           <Slider style={{ alignSelf: matches ? 'center' : 'flex-start' }}>

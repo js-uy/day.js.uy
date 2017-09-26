@@ -49,7 +49,7 @@ const bootAnimation = ({ bootFactor }) => keyframes`
 
 const getAnimation = ({ booting, ...props }) =>
   booting
-    ? `${bootAnimation(props)} 1s step-start forwards`
+    ? `${bootAnimation(props)} 1s step-start infinite forwards`
     : `${glowAnimation(props)} 0.5s ease-in-out infinite alternate`;
 
 const Glow = styled.img`
@@ -76,7 +76,7 @@ export default class extends React.Component {
     booting: true,
   };
   componentDidMount() {
-    setTimeout(() => this.setState({ booting: false }), 500);
+    setTimeout(() => this.setState({ booting: false }), 1000);
   }
   render() {
     return <Glow {...this.props} {...this.state} />;
