@@ -45,21 +45,36 @@ const SponsorsContainer = styled.div`
 const SponsorTypeContainer = styled.div`
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
 `;
 
 const GoldContainer = SponsorTypeContainer.extend`
   padding: ${theme.gridSpacing}px ${theme.gridColumnWidth / 2}px 0;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    padding: ${theme.gridSpacing}px 0 0;
+  }
 `;
 
 const SilverContainer = SponsorTypeContainer.extend`
   padding: ${theme.gridSpacing}px ${theme.gridColumnWidth * 2 + theme.gridSpacing}px 0;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    padding: ${theme.gridSpacing}px 0 0;
+  }
 `;
 
 const BronzeContainer = SponsorTypeContainer.extend`
   padding: ${theme.gridSpacing}px ${theme.gridColumnWidth * 2.5 + theme.gridSpacing * 2}px 0;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    padding: ${theme.gridSpacing}px 0 0;
+  }
 `;
+
+const sponsorSpacing = 6;
 
 const Sponsor = styled.a`
   background-color: ${theme.white};
@@ -69,24 +84,47 @@ const Sponsor = styled.a`
   background-size: 66%;
   border: 3px solid ${theme.yellow};
   display: block;
+  margin-right: ${sponsorSpacing}px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 `;
 
 const Gold = Sponsor.extend`
   border-color: ${theme.yellow};
   height: 190px;
-  width: 270px;
+  width: ${270 - sponsorSpacing}px;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    width: 100%;
+    margin-right: 0;
+  }
 `;
 
 const Silver = Sponsor.extend`
   border-color: ${theme.lightgray};
   height: 140px;
-  width: 270px;
+  width: ${270 - sponsorSpacing}px;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    width: 100%;
+  }
 `;
 
 const Bronze = Sponsor.extend`
   border-color: ${theme.lightblue};
   height: 140px;
-  width: 170px;
+  width: ${170 - sponsorSpacing}px;
+  margin-bottom: ${sponsorSpacing + 4}px;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    width: calc(50% - ${sponsorSpacing}px);
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
 `;
 
 export default () => (
