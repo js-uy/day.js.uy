@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import theme from '../config/theme';
 import NeonLogo from './NeonLogo';
+import Organizers from './Organizers';
 
 const Footer = styled.footer`
   align-items: center;
@@ -29,11 +30,11 @@ export default () => (
       </Link>
     </p>
     <small>All rights reserved © 2017</small>
-    {/* <p>
+    <p>
       Designed by{' '}
-      <Link href="http://hellohello.is/" target="_blank">
+      <Link href="http://hellohello.is/" target="_blank" rel="noopener noreferrer">
         hellohello
-      </Link>.
-    </p> */}
+      </Link>. <Organizers />
+    </p>
   </Footer>
 );

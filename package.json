@@ -7,7 +7,7 @@
   "author": "<espinosacurbelo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "next --port 3001",
     "build":
       "next build && next export -o docs && touch ./docs/.nojekyll && echo 'day.js.uy' > ./docs/CNAME",
     "start": "next start",
@@ -20,6 +20,7 @@
     "react-headroom": "^2.1.6",
     "react-responsive": "^1.3.4",
     "react-view-pager": "^0.5.1",
+    "shuffle-array": "^1.0.1",
     "styled-components": "^2.1.2"
   },
   "devDependencies": {
