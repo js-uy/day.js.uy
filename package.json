@@ -1,13 +1,13 @@
 {
   "name": "day.js.uy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "JSDay Uruguay 2017",
   "main": "index.js",
   "repository": "https://github.com/js-uy/day.js.uy",
   "author": "<espinosacurbelo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next --port 3001",
+    "dev": "next",
     "build":
       "next build && next export -o docs && touch ./docs/.nojekyll && echo 'day.js.uy' > ./docs/CNAME",
     "start": "next start",
