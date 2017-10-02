@@ -13,6 +13,11 @@ const speakers = [
     avatar: 'https://pbs.twimg.com/profile_images/796210937011245056/uP7jSF6B_400x400.jpg',
   },
   {
+    name: 'Karen Serfaty',
+    twitter: 'keyserfaty',
+    avatar: 'https://pbs.twimg.com/profile_images/866043525661589504/YDbRotkw_400x400.jpg',
+  },
+  {
     name: 'Diego Muracciole',
     twitter: 'diegomura',
     avatar: 'https://pbs.twimg.com/profile_images/822435555145347072/CpfADg0__400x400.jpg',
@@ -40,7 +45,7 @@ const Avatar = styled.figure`
   background-image: url('${props => props.src}');
   background-position: center;
   background-size: cover;
-  filter: grayscale(100%) contrast(180%);
+  filter: grayscale(100%) brightness(120%);
   height: 229px;
   margin-bottom: 15px;
   width: 222px;
@@ -52,7 +57,7 @@ const AvatarOverlay = styled.div`
   display: block;
   height: 100%;
   left: 0;
-  opacity: 0.5;
+  mix-blend-mode: multiply;
   position: absolute;
   top: 0;
   width: 100%;
