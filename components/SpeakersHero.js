@@ -83,7 +83,7 @@ const Name = styled.p`
 const Twitter = styled.a`
   color: ${theme.lightblue};
   display: block;
-  font-size: 0.8em;
+  font-size: 0.95em;
   line-height: 1.5em;
   &::before {
     content: '@';

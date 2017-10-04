@@ -1,4 +1,4 @@
-export const black = '#0f1010';
+export const black = `rgb(14, 14, 14)`;
 export const blue = '#101931';
 export const gray = '#27292c';
 export const gridColumns = 12;

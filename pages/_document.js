@@ -14,6 +14,9 @@ injectGlobal`
     margin: 0;
     padding: 0;
   }
+  p {
+    font-size: 20px;
+  }
 `;
 
 export default class MyDocument extends Document {

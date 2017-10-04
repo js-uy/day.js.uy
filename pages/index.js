@@ -13,8 +13,8 @@ export default () => (
     <Header />
     <MainHero />
     <AboutHero />
-    {/* <WorkshopsHero /> */}
-    {/* <ConferencesHero /> */}
+    <WorkshopsHero />
+    <ConferencesHero />
     <SpeakersHero />
     <SponsorsHero />
     <VenueHero />
