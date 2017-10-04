@@ -50,7 +50,7 @@ const bootAnimation = ({ bootFactor }) => keyframes`
 const getAnimation = ({ booting, ...props }) =>
   booting
     ? `${bootAnimation(props)} 1s step-start infinite forwards`
-    : `${glowAnimation(props)} 0.5s ease-in-out infinite alternate`;
+    : `${glowAnimation(props)} 0.5s ease-in-out 0 alternate`;
 
 const Glow = styled.img`
   filter: drop-shadow(0 0 4px ${props => props.color});

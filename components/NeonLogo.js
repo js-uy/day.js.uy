@@ -1,7 +1,8 @@
 import { number, bool } from 'prop-types';
 import styled, { keyframes } from 'styled-components';
-import theme from '../config/theme';
+
 import Glow from './Glow';
+import theme from '../config/theme';
 
 const Container = styled.figure`
   height: ${props => 300 * props.scale}px;
@@ -26,18 +27,21 @@ const Day = styled(Glow)`
   width: ${props => 210 * props.scale}px;
 `;
 
-export default class extends React.Component {
+export default class extends React.PureComponent {
   static propTypes = {
     scale: number,
     noGlow: bool,
   };
+
   static defaultProps = {
     scale: 1,
   };
+
   render() {
     return (
       <Container scale={this.props.scale}>
-        <JS
+        <img width="100%" src="/static/js-day.gif" />
+        {/* <JS
           bootFactor={7}
           color={theme.lightblue}
           noGlow={this.props.noGlow}
@@ -50,7 +54,7 @@ export default class extends React.Component {
           noGlow={this.props.noGlow}
           scale={this.props.scale}
           src="/static/day.svg"
-        />
+        /> */}
       </Container>
     );
   }
