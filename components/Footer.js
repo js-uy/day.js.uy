@@ -29,12 +29,14 @@ export default () => (
         Slack
       </Link>
     </p>
-    <small>All rights reserved © 2017</small>
-    <p>
+    <small>
       Designed by{' '}
       <Link href="http://hellohello.is/" target="_blank" rel="noopener noreferrer">
         hellohello
-      </Link>. <Organizers />
-    </p>
+      </Link>.
+    </small>
+    <small>
+      <Organizers /> All rights reserved © 2017.
+    </small>
   </Footer>
 );

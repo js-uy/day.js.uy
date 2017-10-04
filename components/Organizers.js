@@ -20,10 +20,15 @@ const OrganizerLink = ({ organizer: { twitter, title } }) => (
   </Link>
 );
 
-export default ({ organizers = getOrganizers() }) => (
-  <span>
-    Made by {/* Knowing that there will be *exactly* three organizers simplifies the code. */}
-    <OrganizerLink organizer={organizers[0]} />, <OrganizerLink organizer={organizers[1]} /> and{' '}
-    <OrganizerLink organizer={organizers[2]} />.
-  </span>
-);
+export default class Organizers extends React.Component {
+  render() {
+    return (
+      <span>
+        JSDayUY brought to you by{' '}
+        {/* Knowing that there will be *exactly* three organizers simplifies the code. */}
+        <OrganizerLink organizer={organizers[0]} />,
+        <OrganizerLink organizer={organizers[1]} /> and <OrganizerLink organizer={organizers[2]} />.
+      </span>
+    );
+  }
+}

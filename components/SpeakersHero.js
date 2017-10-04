@@ -1,28 +1,11 @@
 import styled from 'styled-components';
 import { ViewPager, Frame, Track, View } from 'react-view-pager';
 
-import theme from '../config/theme';
+import { Mobile, Desktop } from './MediaQueries';
 import Glow from './Glow';
 import Hero from './Hero';
-import { Mobile, Desktop } from './MediaQueries';
-
-const speakers = [
-  {
-    name: 'Álvaro Videla',
-    twitter: 'old_sound',
-    avatar: 'https://pbs.twimg.com/profile_images/796210937011245056/uP7jSF6B_400x400.jpg',
-  },
-  {
-    name: 'Karen Serfaty',
-    twitter: 'keyserfaty',
-    avatar: 'https://pbs.twimg.com/profile_images/866043525661589504/YDbRotkw_400x400.jpg',
-  },
-  {
-    name: 'Diego Muracciole',
-    twitter: 'diegomura',
-    avatar: 'https://pbs.twimg.com/profile_images/822435555145347072/CpfADg0__400x400.jpg',
-  },
-];
+import speakers from '../config/speakers';
+import theme from '../config/theme';
 
 const Container = styled.div`
   color: ${theme.white};

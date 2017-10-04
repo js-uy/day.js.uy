@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import theme from '../config/theme';
 import Glow from './Glow';
 import Hero from './Hero';
+import { gold, silver, bronze } from '../config/sponsors';
 
 const Container = styled.div`
   color: ${theme.white};
@@ -81,7 +82,7 @@ const Sponsor = styled.a`
   background-image: url('${props => props.src}');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 66%;
+  background-size: ${props => (props.smaller ? 55 : 80)}%;
   border: 3px solid ${theme.yellow};
   display: block;
   margin-right: ${sponsorSpacing}px;
@@ -132,16 +133,27 @@ export default () => (
     <Container>
       <SponsorsGlow src="/static/sponsors.svg" color={theme.lightblue} />
       <SponsorsContainer>
-        {/* <GoldContainer>
-
-        </GoldContainer> */}
-        <SilverContainer>
-          <Silver target="_blank" src="/static/wyeworks.png" href="https://wyeworks.com" />
-        </SilverContainer>
-        <BronzeContainer>
-          <Bronze target="_blank" src="/static/hellohello.svg" href="http://hellohello.is" />
-          <Bronze target="_blank" src="/static/citrusbyte.svg" href="https://citrusbyte.com" />
-        </BronzeContainer>
+        {!!gold.length && (
+          <GoldContainer>
+            {gold.map(({ url, image, smaller }) => (
+              <Gold href={url} src={image} smaller={smaller} />
+            ))}
+          </GoldContainer>
+        )}
+        {!!silver.length && (
+          <SilverContainer>
+            {silver.map(({ url, image, smaller }) => (
+              <Silver href={url} src={image} smaller={smaller} />
+            ))}
+          </SilverContainer>
+        )}
+        {!!bronze.length && (
+          <BronzeContainer>
+            {bronze.map(({ url, image, smaller }) => (
+              <Bronze href={url} src={image} smaller={smaller} />
+            ))}
+          </BronzeContainer>
+        )}
       </SponsorsContainer>
       <Text>
         We're looking for partners to make this event possible.

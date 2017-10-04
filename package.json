@@ -7,9 +7,8 @@
   "author": "<espinosacurbelo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next --port 3001",
-    "build":
-      "next build && next export -o docs && touch ./docs/.nojekyll && echo 'day.js.uy' > ./docs/CNAME",
+    "dev": "next",
+    "deploy": "next build && next export -o dist && touch ./dist/.nojekyll && echo 'day.js.uy' > ./dist/CNAME && gh-pages -d dist",
     "start": "next start",
     "precommit": "lint-staged"
   },
@@ -25,6 +24,7 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.2.0",
+    "gh-pages": "^1.0.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.1.3",
     "prettier": "^1.6.1"
