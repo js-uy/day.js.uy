@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="WIP" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hh-beta" transform="translate(-136.000000, -45.000000)">
+            <g id="logo" transform="translate(136.000000, 45.000000)">
+                <g id="M-Logo">
+                    <rect id="Rectangle-1" fill="#222222" x="0" y="0" width="50" height="50" rx="25"></rect>
+                    <path d="M15.5555556,14.2594991 L17.8147249,14.2594991 L17.8147249,23.5197524 L21.6110643,23.5197524 L21.6110643,25.7224449 L17.8147249,25.7224449 L17.8147249,34.9826982 L15.5555556,34.9826982 L15.5555556,14.2594991 Z M23.8703443,11.1111111 L26.1295136,11.1111111 L26.1295136,38.1310232 L23.8703443,38.1310232 L23.8703443,25.7224921 L23.8703443,23.5196422 L23.8703443,11.1111111 Z M32.1852751,14.2594991 L34.4444444,14.2594991 L34.4444444,34.9826982 L32.1852751,34.9826982 L32.1852751,25.7224449 L28.3889357,25.7224449 L28.3889357,23.5197524 L32.1852751,23.5197524 L32.1852751,14.2594991 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
