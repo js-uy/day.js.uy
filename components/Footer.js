@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import theme from '../config/theme';
+
 import NeonLogo from './NeonLogo';
+import theme from '../config/theme';
 import Organizers from './Organizers';
+import { Mobile } from './MediaQueries';
 
 const Footer = styled.footer`
   align-items: center;
@@ -11,6 +13,13 @@ const Footer = styled.footer`
   flex-direction: column;
   justify-content: space-between;
   padding: ${theme.gridSpacing}px;
+  text-align: center;
+`;
+
+const FooterTextBlock = styled.small`
+  display: block;
+  text-align: center;
+  margin-bottom: ${props => (props.bottomMargin ? theme.gridSpacing / 2 : 0)}px;
 `;
 
 const Link = styled.a`color: ${theme.yellow};`;
@@ -29,15 +38,18 @@ export default () => (
         Slack
       </Link>
     </p>
-    <small>
+
+    <FooterTextBlock bottomMargin>
       Designed by{' '}
       <Link href="http://hellohello.is/" target="_blank" rel="noopener noreferrer">
         hellohello
       </Link>.
-    </small>
-    <small>
+    </FooterTextBlock>
+
+    <FooterTextBlock bottomMargin>
       <Organizers />
-    </small>
-    <small>All rights reserved © 2017.</small>
+    </FooterTextBlock>
+
+    <FooterTextBlock>All rights reserved © 2017.</FooterTextBlock>
   </Footer>
 );

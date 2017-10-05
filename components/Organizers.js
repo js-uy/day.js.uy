@@ -29,7 +29,7 @@ const OrganizerLink = ({ organizer: { hearsay, hearsayRight, twitter, title } })
 
 export default ({ organizers = getOrganizers() }) => (
   <span>
-    JSDayUY brought to you by{' '}
+    JSDayUY is brought to you by{' '}
     {/* Knowing that there will be *exactly* three organizers simplifies the code. */}
     <OrganizerLink organizer={organizers[0]} />; <OrganizerLink organizer={organizers[1]} />; and{' '}
     <OrganizerLink organizer={organizers[2]} />.
