@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet, ThemeProvider, injectGlobal } from 'styled-components';
+import theme from '../config/theme';
 
 injectGlobal`
   body {
@@ -39,6 +40,11 @@ export default class MyDocument extends Document {
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:site_name" content="JSDay Uruguay 2017" />
           <meta name="twitter:site" content="@JSDayUY" />
+          <meta name="theme-color" content={theme.black} />
+          <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon-96x96.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
           <link
             type="text/css"
             rel="stylesheet"

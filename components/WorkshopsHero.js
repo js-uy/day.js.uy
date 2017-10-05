@@ -3,6 +3,12 @@ import theme from '../config/theme';
 import Glow from './Glow';
 import Hero from './Hero';
 
+const WorkshopsHero = styled(Hero)`
+  @media (max-width: ${theme.mobileThreshold}px) {
+    flex-direction: column-reverse;
+  }
+`;
+
 const Container = styled.div`
   align-items: flex-start;
   color: ${theme.white};
@@ -36,7 +42,7 @@ const WorkshopGlow = styled(Glow)`
 `;
 
 export default () => (
-  <Hero backgroundColor={theme.black} id="workshops">
+  <WorkshopsHero backgroundColor={theme.black} id="workshops">
     <Container>
       <WorkshopGlow src="/static/workshops.svg" color={theme.lightblue} />
       <p>
@@ -45,5 +51,5 @@ export default () => (
       </p>
     </Container>
     <Keyboard src="/static/workshops.gif" />
-  </Hero>
+  </WorkshopsHero>
 );
