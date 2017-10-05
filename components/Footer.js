@@ -41,9 +41,12 @@ export default () => (
 
     <FooterTextBlock bottomMargin>
       Designed by{' '}
-      <Link href="http://hellohello.is/" target="_blank" rel="noopener noreferrer">
-        hellohello
-      </Link>.
+      <strong>
+        <Link href="http://hellohello.is/" target="_blank" rel="noopener noreferrer">
+          hellohello
+        </Link>
+      </strong>
+      .
     </FooterTextBlock>
 
     <FooterTextBlock bottomMargin>

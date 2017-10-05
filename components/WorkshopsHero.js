@@ -40,9 +40,8 @@ export default () => (
     <Container>
       <WorkshopGlow src="/static/workshops.svg" color={theme.lightblue} />
       <p>
-        An easy going event built for and by developers starting with a day of workshops and
-        integration activities, followed by a conference day with plenty of time to chat, share
-        experiences and make friends from the community between talks.
+        The event will start with a day of workshops and integration activities, with plenty of time
+        to chat, share experiences and make friends from the community in between.
       </p>
     </Container>
     <Keyboard src="/static/workshops.gif" />

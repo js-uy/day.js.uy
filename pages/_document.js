@@ -29,7 +29,16 @@ export default class MyDocument extends Document {
         <Head>
           <title>JSDay Uruguay 2017</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <meta name="description" content="Save the date! 24th & 25th November" />
+          <meta property="og:title" content="JSDay Uruguay 2017" />
+          <meta
+            property="og:description"
+            content="A community driven conference for JavaScript developers. Save the date! 24th & 25th November."
+          />
+          <meta property="og:image" content="/static/js-day.png" />
+          <meta property="og:url" content="http://day.js.uy" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="og:site_name" content="JSDay Uruguay 2017" />
+          <meta name="twitter:site" content="@JSDayUY" />
           <link
             type="text/css"
             rel="stylesheet"

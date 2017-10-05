@@ -7,7 +7,7 @@ export default [
   {
     twitter: 'reciam',
     title: 'Rodrigo Espinosa Curbelo',
-    hearsay: 'notorious',
+    hearsay: 'the notorious',
   },
   {
     twitter: 'nachoaIvarez',
