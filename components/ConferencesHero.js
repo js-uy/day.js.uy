@@ -41,8 +41,9 @@ export default () => (
     <Container>
       <ConferenceGlow src="/static/conferences.svg" color={theme.lightblue} />
       <p>
-        A unique experience for all 200 attendees with workshops and social events the first day and
-        a single track conference the second day.
+        On the second day, diverse speakers will cover relevant topics from the JavaScript
+        ecosystem, cool libraries, fun experiments and more; an oportunity to learn about JS latest
+        and greatest.
       </p>
     </Container>
   </Hero>

@@ -44,8 +44,8 @@ export default () => (
     <InfoContainer>
       <AboutGlow src="/static/about.svg" color={theme.lightblue} />
       <Text>
-        JS Day is not just conference but a gathering, a celebration party where all the JS
-        community meets and commemorates another great year.
+        JS Day is not just conference but a gathering, a celebration party where regional JS
+        developers meet to learn, make friends and grow our community.
       </Text>
     </InfoContainer>
   </Hero>
