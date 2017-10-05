@@ -11,7 +11,6 @@ export const bronze = [
   {
     image: '/static/hellohello.svg',
     url: 'http://hellohello.is',
-    smaller: true,
   },
   {
     image: '/static/citrusbyte.svg',
