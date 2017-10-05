@@ -12,6 +12,7 @@ export default [
   {
     name: 'Diego Muracciole',
     twitter: 'diegomura',
-    avatar: 'https://pbs.twimg.com/profile_images/822435555145347072/CpfADg0__400x400.jpg',
+    avatar:
+      'https://cdn1.scrvt.com/f4ec9d9b5d842d1656c97ba1d6b27d5b/37368fce4311cc25/e53169987a1f/v/5bc9f2fdae66/diego-muracciole-aa5d84f1e1172738b59a0521fbb123b78c4a428dc38ba50df453249efa2081fa.jpg',
   },
 ];
