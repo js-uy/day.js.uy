@@ -66,7 +66,7 @@ export default () => (
         A community driven conference<br />for JavaScript developers
       </H1>
       <H2>
-        24th & 25th Nov
+        Nov 24th & 25th
         <Desktop component="span">{' | '}</Desktop>
         <Mobile>
           <br />

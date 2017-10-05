@@ -21,6 +21,7 @@ const VenuePics = styled.figure`
 
 const VenueInfo = styled.div`
   align-items: flex-start;
+  align-self: center;
   color: ${theme.white};
   display: flex;
   flex-direction: column;
@@ -42,8 +43,6 @@ const H2 = styled.h2`
 `;
 
 const VenueGlow = styled(Glow)`
-  margin-top: 88px;
-  margin-bottom: 80px;
   transform: translateX(-15px);
 
   @media (max-width: ${theme.mobileThreshold}px) {
@@ -56,7 +55,7 @@ const Text = styled.p`font-size: 1rem;`;
 const SeparationLine = styled.div`
   height: 1px;
   background: #fff;
-  margin: 70px 0 40px 0;
+  margin: 30px 0 40px;
   width: 40px;
 `;
 
@@ -73,7 +72,6 @@ export default () => (
       </Desktop>
       <VenueInfo>
         <VenueGlow src="/static/venue.svg" color={theme.lightblue} />
-
         <div>
           <H2>WHERE</H2>
           <Text>
@@ -83,14 +81,11 @@ export default () => (
             11300 - Montevideo, Uruguay
           </Text>
         </div>
-
         <div>
           <H2>WHEN</H2>
-          <Text>November 24 & 25, 2017</Text>
+          <Text>November 24th & 25th, 2017</Text>
         </div>
-
         <SeparationLine />
-
         <ShowMap
           href="https://www.google.com.uy/maps/place/Esplendor+Montevideo+A+Wyndham+Grand+Hotel/@-34.9113744,-56.1415407,14z/data=!4m8!1m2!2m1!1sesplendor+hotel!3m4!1s0x0:0x40a5c2bc61e23a5d!8m2!3d-34.9283442!4d-56.1601996"
           target="_blank"

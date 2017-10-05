@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
           <meta property="og:title" content="JSDay Uruguay 2017" />
           <meta
             property="og:description"
-            content="A community driven conference for JavaScript developers. Save the date! 24th & 25th November."
+            content="A community driven conference for JavaScript developers. Save the date! November 24th & 25th."
           />
           <meta property="og:image" content="/static/js-day.png" />
           <meta property="og:url" content="http://day.js.uy" />
