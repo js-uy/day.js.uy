@@ -5,7 +5,7 @@ export default styled.section`
   align-items: center;
   background-color: ${props => props.backgroundColor};
   display: flex;
-  min-height: ${props => `calc(100vh - ${props.withHeader ? theme.headerHeight : 0}px)`};
+  height: ${props => `calc(100vh - ${props.withHeader ? theme.headerHeight : 0}px)`};
   justify-content: space-around;
   max-width: 100vw;
   overflow: hidden;
