@@ -36,7 +36,8 @@ export default () => (
       </Link>.
     </small>
     <small>
-      <Organizers /> All rights reserved © 2017.
+      <Organizers />
     </small>
+    <small>All rights reserved © 2017.</small>
   </Footer>
 );
