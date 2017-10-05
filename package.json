@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "deploy": "next build && next export -o dist && touch ./dist/.nojekyll && echo 'day.js.uy' > ./dist/CNAME && gh-pages -d dist",
+    "deploy":
+      "next build && next export -o ./dist && touch ./dist/.nojekyll && echo 'day.js.uy' > ./dist/CNAME && gh-pages -d dist",
     "start": "next start",
     "precommit": "lint-staged"
   },
