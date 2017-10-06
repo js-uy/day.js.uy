@@ -47,7 +47,7 @@ const SponsorTypeContainer = styled.div`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
 `;
 

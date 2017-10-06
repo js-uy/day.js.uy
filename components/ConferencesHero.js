@@ -28,7 +28,7 @@ const Microphone = styled.img`
 `;
 
 const ConferenceGlow = styled(Glow)`
-  transform: translateX(-13px);
+  transform: translateX(-15px);
 
   @media (max-width: ${theme.mobileThreshold}px) {
     transform: translateX(-9px);

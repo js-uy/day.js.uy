@@ -21,4 +21,9 @@ export const bronze = [
     image: '/static/ingenious.jpg',
     url: 'http://www.ingsw.com/',
   },
+  {
+    image: 'https://pbs.twimg.com/profile_images/467324973690793985/MihsqanU_400x400.png',
+    url: 'https://moove-it.com',
+    smaller: true,
+  },
 ];

@@ -53,11 +53,9 @@ const getAnimation = ({ booting, ...props }) =>
     : `${glowAnimation(props)} 0.5s ease-in-out 0 alternate`;
 
 const Glow = styled.img`
-  filter: drop-shadow(0 0 4px ${props => props.color});
+  ${'' /* filter: drop-shadow(0 0 4px ${props => props.color});
   animation: ${props => !props.noGlow && getAnimation(props)};
-  transition: all 0.5s ease;
-
-  @media (max-width: ${theme.mobileThreshold}px) {
+  transition: all 0.5s ease; */} @media (max-width: ${theme.mobileThreshold}px) {
     height: 60px;
   }
 `;
