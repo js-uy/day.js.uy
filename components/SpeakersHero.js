@@ -20,9 +20,13 @@ const Container = styled.div`
   }
 `;
 
-const Link = styled.a`color: ${theme.yellow};`;
+const Link = styled.a`
+  color: ${theme.yellow};
+`;
 
-const AvatarContainer = styled.div`position: relative;`;
+const AvatarContainer = styled.div`
+  position: relative;
+`;
 
 const Avatar = styled.figure`
   background-image: url('${props => props.src}');
@@ -79,6 +83,10 @@ const SpeakersGlow = styled(Glow)`
   }
 `;
 
+const Text = styled.p`
+  text-align: center;
+`;
+
 const Speaker = ({ name, twitter, avatar }) => (
   <SpeakerContainer>
     <AvatarContainer>
@@ -117,15 +125,17 @@ export default () => (
           </Slider>
         )}
       </Desktop>
-      <p>
-        We have a great lineup coming. In the meantime here's our{' '}
+      <Text>
+        We have a great lineup coming. <br />
+        In the meantime here's our{' '}
         <Link
           href="https://docs.google.com/forms/d/e/1FAIpQLSfHEs-oa3RL8P2jo_MehR8lq7A0Sje9EJZuXafesqp8Ghv7YQ/viewform"
           target="_blank"
         >
           Call for proposals
-        </Link>. Send yours!
-      </p>
+        </Link>{' '}
+        open till October 25th. Send yours!
+      </Text>
     </Container>
   </Hero>
 );
