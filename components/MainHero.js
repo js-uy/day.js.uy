@@ -9,9 +9,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  @media (max-width: ${theme.mobileThreshold}px) {
-    padding: 30px;
-  }
+  padding: 30px;
 `;
 
 const LogoContainer = styled.div`

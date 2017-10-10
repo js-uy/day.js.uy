@@ -38,6 +38,7 @@ const Nav = styled.nav`
   flex: 1;
   justify-content: flex-end;
   max-width: 720px;
+  margin-right: ${theme.gridSpacing}px;
 `;
 
 const Anchor = styled.a`
@@ -105,7 +106,15 @@ export default class Header extends React.Component {
     this.setState({ pinned: false });
   };
   toggleOverlay = () => {
-    this.setState({ overlayVisible: !this.state.overlayVisible });
+    this.setState(prevState => {
+      const overlayVisible = !prevState.overlayVisible;
+      if (overlayVisible) {
+        document.body.className = 'fixed-screen';
+      } else {
+        document.body.className = '';
+      }
+      return { overlayVisible };
+   });
   };
   render() {
     return (
