@@ -87,7 +87,7 @@ const Overlay = styled.div`
   height: 100vh;
   justify-content: space-around;
   overflow: hidden;
-  padding: ${theme.gridSpacing}px;
+  padding: ${theme.gridSpacing * 2}px ${theme.gridSpacing}px;
   position: fixed;
   width: 100vw;
   z-index: 8888;
@@ -96,16 +96,12 @@ const Overlay = styled.div`
 export default class Header extends React.Component {
   state = {
     pinned: false,
-    overlayVisible: false,
   };
   onPin = () => {
     this.setState({ pinned: true });
   };
   onUnpin = () => {
     this.setState({ pinned: false });
-  };
-  toggleOverlay = () => {
-    this.setState({ overlayVisible: !this.state.overlayVisible });
   };
   render() {
     return (
@@ -142,9 +138,9 @@ export default class Header extends React.Component {
         <Mobile>
           <MobileContainer>
             <Logo src="/static/header-logo.svg" size="100px" margin="30px" />
-            <Hamburger src="/static/hamburger.svg" onClick={this.toggleOverlay} />
-            {this.state.overlayVisible && (
-              <Overlay onClick={this.toggleOverlay}>
+            <Hamburger src="/static/hamburger.svg" onClick={this.props.toggleOverlay} />
+            {this.props.overlayVisible && (
+              <Overlay onClick={this.props.toggleOverlay}>
                 <Anchor href="#about" dark>
                   About
                 </Anchor>

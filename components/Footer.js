@@ -22,9 +22,7 @@ const FooterTextBlock = styled.small`
   margin-bottom: ${props => (props.bottomMargin ? theme.gridSpacing / 2 : 0)}px;
 `;
 
-const Link = styled.a`
-  color: ${theme.yellow};
-`;
+const Link = styled.a`color: ${theme.yellow};`;
 
 export default () => (
   <Footer>
@@ -56,7 +54,7 @@ export default () => (
     </FooterTextBlock>
 
     <FooterTextBlock>
-      JSDay adheres to the{' '}
+      JSDayUY adheres to the{' '}
       <Link href="http://jsconf.com/codeofconduct.html" target="_blank" rel="noopener noreferrer">
         JSConf Code of Conduct
       </Link>{' '}

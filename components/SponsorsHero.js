@@ -117,10 +117,10 @@ const Bronze = Sponsor.extend`
   border-color: ${theme.lightblue};
   height: 140px;
   width: ${170 - sponsorSpacing}px;
-  margin-bottom: ${sponsorSpacing + 4}px;
+  margin-bottom: ${sponsorSpacing}px;
 
   @media (max-width: ${theme.mobileThreshold}px) {
-    width: calc(50% - ${sponsorSpacing}px);
+    width: calc(50% - ${sponsorSpacing / 2}px);
 
     &:nth-child(2n) {
       margin-right: 0;
