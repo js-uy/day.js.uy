@@ -27,6 +27,12 @@ injectGlobal`
   p {
     font-size: 20px;
   }
+  body.fixed-screen {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+  }
 `;
 
 export default class MyDocument extends Document {
