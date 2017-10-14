@@ -6,6 +6,7 @@ import AboutHero from '../components/AboutHero';
 import WorkshopsHero from '../components/WorkshopsHero';
 import ConferencesHero from '../components/ConferencesHero';
 import SpeakersHero from '../components/SpeakersHero';
+import TicketsHero from '../components/TicketsHero';
 import SponsorsHero from '../components/SponsorsHero';
 import VenueHero from '../components/VenueHero';
 import Footer from '../components/Footer';
@@ -34,6 +35,7 @@ export default class extends React.Component {
         <WorkshopsHero />
         <ConferencesHero />
         <SpeakersHero />
+        <TicketsHero />
         <SponsorsHero />
         <VenueHero />
         <Footer />

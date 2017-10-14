@@ -1,6 +1,7 @@
-export const black = `#0e0e0e`;
+export const black = '#0e0e0e';
 export const blue = '#101931';
 export const gray = '#27292c';
+export const cyan = '#42efff';
 export const gridColumns = 12;
 export const gridColumnWidth = 70;
 export const gridSpacing = 30;
@@ -18,6 +19,7 @@ export default {
   black,
   blue,
   gray,
+  cyan,
   gridColumns,
   gridColumnWidth,
   gridSpacing,
