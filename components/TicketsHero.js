@@ -1,5 +1,11 @@
+import React from 'react';
+import moment from 'moment';
+import io from 'socket.io-client';
 import styled from 'styled-components';
+
 import theme from '../config/theme';
+import { SOCKET_IO_URL } from '../config/constants';
+
 import Glow from './Glow';
 import Hero from './Hero';
 import Ticket from './Ticket';
@@ -26,18 +32,113 @@ const TicketsGlow = styled(Glow)`
 
 const TicketsContainer = styled.div`display: flex;`;
 
-export default () => (
-  <Hero backgroundColor={theme.black} id="tickets" noHeight>
-    <Container>
-      <TicketsGlow src="/static/tickets.svg" color={theme.lightblue} />
+// Index the data by its title.
+const dataToState = data =>
+  data.reduce((collection, item) => {
+    collection[item.title] = item;
+    return collection;
+  }, {});
 
-      <TicketsContainer>
-        <Ticket icon="/static/ticket-early-bird.svg" title="Early Bird" price={80} />
+export default class extends React.PureComponent {
+  state = {
+    data: {},
+    socket: null,
+  };
 
-        <Ticket icon="/static/ticket-regular.svg" title="Regular" price={100} />
+  componentDidMount() {
+    const socket = io(SOCKET_IO_URL);
 
-        <Ticket icon="/static/ticket-last-batch.svg" title="Last Batch" price={130} />
-      </TicketsContainer>
-    </Container>
-  </Hero>
-);
+    if (this.state.socket === null) {
+      socket.on('tickets', data => {
+        this.setState({ data: dataToState(data) });
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    this.setState({ socket: null });
+  }
+
+  getTicket(title) {
+    const { data } = this.state;
+    return data[title] || {};
+  }
+
+  getState(title) {
+    const { state } = this.getTicket(title);
+
+    if (moment().isBefore(this.getStartAt(title))) {
+      return 'upcoming';
+    }
+
+    if (this.getTicketsSold(title) === this.getTicketsTotal(title)) {
+      return 'sold-out';
+    }
+
+    if (state !== 'on_sale') {
+      return 'off-sale';
+    }
+
+    return 'on-sale';
+  }
+
+  getPrice(title) {
+    return parseInt(this.getTicket(title).price || 0, 10);
+  }
+
+  getTicketsSold(title) {
+    return this.getTicket(title).quantitySold || 0;
+  }
+
+  getTicketsTotal(title) {
+    return this.getTicket(title).quantity || 0;
+  }
+
+  getStartAt(title) {
+    return moment(this.getTicket(title).startAt);
+  }
+
+  render() {
+    const { data } = this.state;
+
+    return (
+      <Hero backgroundColor={theme.black} id="tickets" noHeight>
+        <Container>
+          <TicketsGlow src="/static/tickets.svg" color={theme.lightblue} />
+
+          <TicketsContainer>
+            <Ticket
+              title="Early Bird"
+              icon="/static/ticket-early-bird.svg"
+              state={this.getState('Early Bird')}
+              price={this.getPrice('Early Bird')}
+              startAt={this.getStartAt('Early Bird')}
+              ticketsSold={this.getTicketsSold('Early Bird')}
+              ticketsTotal={this.getTicketsTotal('Early Bird')}
+            />
+
+            <Ticket
+              title="Regular"
+              icon="/static/ticket-regular.svg"
+              state={this.getState('Regular')}
+              price={this.getPrice('Regular')}
+              startAt={this.getStartAt('Regular')}
+              ticketsSold={this.getTicketsSold('Regular')}
+              ticketsTotal={this.getTicketsTotal('Regular')}
+            />
+
+            <Ticket
+              title="Last Batch"
+              icon="/static/ticket-last-batch.svg"
+              state={this.getState('Last Batch')}
+              price={this.getPrice('Last Batch')}
+              startAt={this.getStartAt('Last Batch')}
+              ticketsSold={this.getTicketsSold('Last Batch')}
+              ticketsTotal={this.getTicketsTotal('Last Batch')}
+            />
+          </TicketsContainer>
+        </Container>
+      </Hero>
+    );
+  }
+}

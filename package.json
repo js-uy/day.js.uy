@@ -14,6 +14,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "moment": "^2.19.1",
     "next": "^3.0.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -22,6 +23,7 @@
     "react-responsive": "^1.3.4",
     "react-view-pager": "^0.5.1",
     "shuffle-array": "^1.0.1",
+    "socket.io-client": "^2.0.3",
     "styled-components": "^2.1.2"
   },
   "devDependencies": {

@@ -136,21 +136,21 @@ export default () => (
         {!!gold.length && (
           <GoldContainer>
             {gold.map(({ url, image, smaller }) => (
-              <Gold href={url} src={image} smaller={smaller} />
+              <Gold key={url} href={url} src={image} smaller={smaller} />
             ))}
           </GoldContainer>
         )}
         {!!silver.length && (
           <SilverContainer>
             {silver.map(({ url, image, smaller }) => (
-              <Silver href={url} src={image} smaller={smaller} />
+              <Silver key={url} href={url} src={image} smaller={smaller} />
             ))}
           </SilverContainer>
         )}
         {!!bronze.length && (
           <BronzeContainer>
             {bronze.map(({ url, image, smaller }) => (
-              <Bronze href={url} src={image} smaller={smaller} />
+              <Bronze key={url} href={url} src={image} smaller={smaller} />
             ))}
           </BronzeContainer>
         )}

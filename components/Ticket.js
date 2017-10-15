@@ -51,17 +51,17 @@ const EachTicketIncludesDescription = styled.p`
 `;
 
 const BuyNowButton = styled.a`
-  background-color: ${theme.yellow};
-  color: #242424;
+  background-color: ${({ disabled }) => (disabled ? theme.black : theme.yellow)};
+  color: ${({ disabled }) => (disabled ? theme.white : '#242424')};
   display: block;
   font-size: 16px;
   font-weight: bold;
   margin: 0 auto 50px auto;
   max-width: 290px;
-  width: 100%;
-  padding-top: 8px;
   padding-bottom: 11px;
+  padding-top: 8px;
   text-align: center;
+  width: 100%;
 `;
 
 const TicketsProgressBackground = styled.div`
@@ -78,6 +78,7 @@ const TicketsProgress = styled.div`
   position: absolute;
   width: ${props => props.percentage}%;
   z-index: 0;
+  transition: all 1s;
 `;
 
 const TicketProgressText = styled.span`
@@ -94,21 +95,25 @@ const TicketProgressText = styled.span`
   z-index: 1;
 `;
 
-export default ({ icon, title, price }) => (
+export default ({ icon, title, price, state, startAt, ticketsTotal, ticketsSold }) => (
   <Ticket>
     <TicketIcon src={icon} />
     <TicketTitle>{title}</TicketTitle>
-    <Price>${price}</Price>
+    <Price>{price ? `$${price}` : '...'}</Price>
     <EachTicketIncludes>Each ticket includes</EachTicketIncludes>
     <EachTicketIncludesDescription>
       Access to the all the talks Breakfast and lunch
     </EachTicketIncludesDescription>
-    <BuyNowButton>Buy Now</BuyNowButton>
+    {!state ? <BuyNowButton disabled>...</BuyNowButton> : null}
+    {state === 'on-sale' ? <BuyNowButton>Buy Now</BuyNowButton> : null}
+    {state === 'upcoming' ? <BuyNowButton disabled>Starts {startAt.fromNow()}</BuyNowButton> : null}
+    {state === 'off-sale' ? <BuyNowButton disabled>/shrug</BuyNowButton> : null}
+    {state === 'sold-out' ? <BuyNowButton disabled>SOLD OUT</BuyNowButton> : null}
 
     <TicketsProgressBackground>
-      <TicketsProgress percentage={70} />
+      <TicketsProgress percentage={ticketsSold / ticketsTotal * 100} />
       <TicketProgressText>
-        <strong>{34}</strong> {title} Tickets available
+        <strong>{ticketsTotal - ticketsSold}</strong> {title} Tickets available
       </TicketProgressText>
     </TicketsProgressBackground>
   </Ticket>
