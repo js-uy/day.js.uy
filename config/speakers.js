@@ -7,7 +7,7 @@ export default [
   {
     name: 'Karen Serfaty',
     twitter: 'keyserfaty',
-    avatar: 'https://pbs.twimg.com/profile_images/866043525661589504/YDbRotkw_400x400.jpg',
+    avatar: '/static/speaker-karen.jpg',
   },
   {
     name: 'Diego Muracciole',
