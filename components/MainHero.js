@@ -73,9 +73,7 @@ export default () => (
         </Mobile>
         Montevideo, Uruguay
       </H2>
-      <CallToAction href="#tickets" wait>
-        Get tickets
-      </CallToAction>
+      <CallToAction href="#tickets">Get tickets</CallToAction>
     </TextContainer>
     <Desktop>
       <NeonLogo scale={1.7} />

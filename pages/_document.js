@@ -65,6 +65,8 @@ export default class MyDocument extends Document {
           />
           {styleTags}
 
+          <script src="https://js.tito.io/v1" async />
+
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
 
           <script

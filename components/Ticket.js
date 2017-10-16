@@ -95,7 +95,7 @@ const TicketProgressText = styled.span`
   z-index: 1;
 `;
 
-export default ({ icon, title, price, state, startAt, ticketsTotal, ticketsSold }) => (
+export default ({ icon, title, price, state, startAt, ticketsTotal, ticketsSold, href }) => (
   <Ticket>
     <TicketIcon src={icon} />
     <TicketTitle>{title}</TicketTitle>
@@ -105,7 +105,11 @@ export default ({ icon, title, price, state, startAt, ticketsTotal, ticketsSold 
       Access to the all the talks Breakfast and lunch
     </EachTicketIncludesDescription>
     {!state ? <BuyNowButton disabled>...</BuyNowButton> : null}
-    {state === 'on-sale' ? <BuyNowButton>Buy Now</BuyNowButton> : null}
+    {state === 'on-sale' ? (
+      <BuyNowButton target="_blank" rel="noopener noreferrer" href={href}>
+        Buy Now
+      </BuyNowButton>
+    ) : null}
     {state === 'upcoming' ? <BuyNowButton disabled>Starts {startAt.fromNow()}</BuyNowButton> : null}
     {state === 'off-sale' ? <BuyNowButton disabled>/shrug</BuyNowButton> : null}
     {state === 'sold-out' ? <BuyNowButton disabled>SOLD OUT</BuyNowButton> : null}

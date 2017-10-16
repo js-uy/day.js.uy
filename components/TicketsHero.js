@@ -30,7 +30,10 @@ const TicketsGlow = styled(Glow)`
   }
 `;
 
-const TicketsContainer = styled.div`display: flex;`;
+const TicketsContainer = styled.div`
+  display: flex;
+  margin: ${theme.gridSpacing}px 0 auto 0;
+`;
 
 // Index the data by its title.
 const dataToState = data =>
@@ -98,6 +101,14 @@ export default class extends React.PureComponent {
     return moment(this.getTicket(title).startAt);
   }
 
+  getId(title) {
+    return this.getTicket(title).id || '';
+  }
+
+  getHref(title) {
+    return `https://ti.to/js-day/2017/with/${this.getId(title)}`;
+  }
+
   render() {
     const { data } = this.state;
 
@@ -109,9 +120,10 @@ export default class extends React.PureComponent {
           <TicketsContainer>
             <Ticket
               title="Early Bird"
-              icon="/static/ticket-early-bird.svg"
+              href={this.getHref('Early Bird')}
               state={this.getState('Early Bird')}
               price={this.getPrice('Early Bird')}
+              icon="/static/ticket-early-bird.svg"
               startAt={this.getStartAt('Early Bird')}
               ticketsSold={this.getTicketsSold('Early Bird')}
               ticketsTotal={this.getTicketsTotal('Early Bird')}
@@ -119,22 +131,26 @@ export default class extends React.PureComponent {
 
             <Ticket
               title="Regular"
-              icon="/static/ticket-regular.svg"
+              href={this.getHref('Regular')}
               state={this.getState('Regular')}
               price={this.getPrice('Regular')}
+              icon="/static/ticket-regular.svg"
               startAt={this.getStartAt('Regular')}
               ticketsSold={this.getTicketsSold('Regular')}
               ticketsTotal={this.getTicketsTotal('Regular')}
+              href="https://ti.to/js-day/2017/with/nc1w6uy7lxe"
             />
 
             <Ticket
               title="Last Batch"
-              icon="/static/ticket-last-batch.svg"
+              href={this.getHref('Last Batch')}
               state={this.getState('Last Batch')}
               price={this.getPrice('Last Batch')}
+              icon="/static/ticket-last-batch.svg"
               startAt={this.getStartAt('Last Batch')}
               ticketsSold={this.getTicketsSold('Last Batch')}
               ticketsTotal={this.getTicketsTotal('Last Batch')}
+              href="https://ti.to/js-day/2017/with/b5xrbrlna58"
             />
           </TicketsContainer>
         </Container>
