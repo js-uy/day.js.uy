@@ -18,9 +18,9 @@ const Container = styled.div`
   align-items: center;
 
   @media (max-width: ${theme.mobileThreshold}px) {
-    padding: ${theme.gridSpacing}px;
-    max-width: 100vw;
     align-items: flex-start;
+    max-width: 100vw;
+    padding: 0 ${theme.gridSpacing}px;
   }
 `;
 
@@ -116,7 +116,6 @@ export default class extends React.PureComponent {
       <Hero backgroundColor={theme.black} id="tickets" noHeight>
         <Container>
           <TicketsGlow src="/static/tickets.svg" color={theme.lightblue} />
-
           <TicketsContainer>
             <Ticket
               title="Early Bird"
@@ -128,7 +127,6 @@ export default class extends React.PureComponent {
               ticketsSold={this.getTicketsSold('Early Bird')}
               ticketsTotal={this.getTicketsTotal('Early Bird')}
             />
-
             <Ticket
               title="Regular"
               href={this.getHref('Regular')}
@@ -140,7 +138,6 @@ export default class extends React.PureComponent {
               ticketsTotal={this.getTicketsTotal('Regular')}
               href="https://ti.to/js-day/2017/with/nc1w6uy7lxe"
             />
-
             <Ticket
               title="Last Batch"
               href={this.getHref('Last Batch')}

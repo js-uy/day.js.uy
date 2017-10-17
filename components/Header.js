@@ -150,7 +150,7 @@ export default class Header extends React.Component {
                 <Anchor href="#schedule" disabled dark>
                   Schedule
                 </Anchor>
-                <Anchor href="#tickets" disabled dark>
+                <Anchor href="#tickets" dark>
                   Tickets
                 </Anchor>
                 <Anchor href="#sponsors" dark>
