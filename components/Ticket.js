@@ -102,7 +102,7 @@ export default ({ icon, title, price, state, startAt, ticketsTotal, ticketsSold,
     <Price>{price ? `$${price}` : '...'}</Price>
     <EachTicketIncludes>Each ticket includes</EachTicketIncludes>
     <EachTicketIncludesDescription>
-      Access to the all the talks Breakfast and lunch
+      Access to all of the talks Breakfast and lunch
     </EachTicketIncludesDescription>
     {!state ? <BuyNowButton disabled>...</BuyNowButton> : null}
     {state === 'on-sale' ? (
