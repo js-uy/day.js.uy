@@ -33,8 +33,9 @@ const TicketsContainer = styled.div`
   display: flex;
   margin: ${theme.gridSpacing}px 0 auto 0;
   @media (max-width: ${theme.mobileThreshold}px) {
-    width: 100vw;
+    -webkit-overflow-scrolling: touch;
     overflow-x: scroll;
+    width: 100vw;
   }
 `;
 
