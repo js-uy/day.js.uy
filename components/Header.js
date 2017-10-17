@@ -122,7 +122,7 @@ export default class Header extends React.Component {
                 <Anchor dark={this.state.pinned} href="#schedule" disabled>
                   Schedule
                 </Anchor>
-                <Anchor dark={this.state.pinned} href="#tickets" disabled>
+                <Anchor dark={this.state.pinned} href="#tickets">
                   Tickets
                 </Anchor>
                 <Anchor dark={this.state.pinned} href="#sponsors">
