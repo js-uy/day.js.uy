@@ -20,7 +20,6 @@ const Container = styled.div`
   @media (max-width: ${theme.mobileThreshold}px) {
     align-items: flex-start;
     max-width: 100vw;
-    padding: 0 ${theme.gridSpacing}px;
   }
 `;
 
@@ -33,7 +32,13 @@ const TicketsGlow = styled(Glow)`
 const TicketsContainer = styled.div`
   display: flex;
   margin: ${theme.gridSpacing}px 0 auto 0;
+  @media (max-width: ${theme.mobileThreshold}px) {
+    width: 100vw;
+    overflow-x: scroll;
+  }
 `;
+
+const Spacing = styled.span`min-width: ${theme.gridSpacing}px;`;
 
 // Index the data by its title.
 const dataToState = data =>
@@ -149,6 +154,9 @@ export default class extends React.PureComponent {
               ticketsTotal={this.getTicketsTotal('Last Batch')}
               href="https://ti.to/js-day/2017/with/b5xrbrlna58"
             />
+            <Mobile>
+              <Spacing />
+            </Mobile>
           </TicketsContainer>
         </Container>
       </Hero>

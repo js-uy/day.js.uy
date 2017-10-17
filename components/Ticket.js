@@ -15,10 +15,15 @@ const Ticket = styled.div`
   }
 
   @media (max-width: ${theme.mobileThreshold}px) {
-    width: 100%;
-    margin-right: 0;
+    min-width: 80vw;
     margin-bottom: 0;
-    display: ${props => (props.disabled ? 'none' : 'flex')};
+    &:first-of-type {
+      margin-left: ${theme.gridSpacing}px;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
 `;
 
@@ -53,6 +58,10 @@ const EachTicketIncludes = styled.span`
   margin: 0 ${theme.gridSpacing}px;
   margin-bottom: ${theme.gridSpacing}px;
   text-align: center;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    font-size: 13px;
+  }
 `;
 
 const EachTicketIncludesDescription = styled.p`
@@ -61,6 +70,10 @@ const EachTicketIncludesDescription = styled.p`
   margin: 0 ${theme.gridSpacing}px;
   margin-bottom: ${theme.gridSpacing}px;
   text-align: center;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    font-size: 13px;
+  }
 `;
 
 const BuyNowButton = styled.a`
@@ -103,6 +116,10 @@ const TicketProgressText = styled.span`
   text-align: center;
   width: 100%;
   z-index: 1;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    font-size: 13px;
+  }
 `;
 
 export default ({ icon, title, price, state, startAt, ticketsTotal, ticketsSold, href }) => (
