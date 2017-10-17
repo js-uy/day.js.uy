@@ -25,7 +25,7 @@ const Container = styled.div`
 
 const TicketsGlow = styled(Glow)`
   @media (max-width: ${theme.mobileThreshold}px) {
-    transform: translateX(-5px);
+    transform: translateX(${theme.gridSpacing - 5}px);
   }
 `;
 
