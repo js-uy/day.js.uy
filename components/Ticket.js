@@ -8,7 +8,7 @@ const Ticket = styled.div`
   justify-content: center;
   margin-right: ${theme.gridSpacing}px;
   width: ${theme.gridColumnWidth * 4 + theme.gridSpacing * 3}px;
-  opacity: ${props => (props.disabled ? 0.5 : 1)};
+  opacity: ${props => (props.disabled ? 0.666 : 1)};
 
   &:last-of-type {
     margin-right: 0;
