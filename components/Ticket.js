@@ -122,6 +122,11 @@ const TicketProgressText = styled.span`
   }
 `;
 
+const ticketsAvailable = (ticketsTotal, ticketsSold) => {
+  const available = ticketsTotal - ticketsSold;
+  return available === 0 ? 'No' : available;
+};
+
 export default ({ icon, title, price, state, startAt, ticketsTotal, ticketsSold, href }) => (
   <Ticket disabled={state !== 'on-sale'}>
     <TicketIcon src={icon} />
@@ -143,7 +148,7 @@ export default ({ icon, title, price, state, startAt, ticketsTotal, ticketsSold,
     <TicketsProgressBackground>
       <TicketsProgress percentage={ticketsSold / ticketsTotal * 100} />
       <TicketProgressText>
-        <strong>{ticketsTotal - ticketsSold}</strong> {title} Tickets available
+        <strong>{ticketsAvailable(ticketsTotal, ticketsSold)}</strong> {title} Tickets available
       </TicketProgressText>
     </TicketsProgressBackground>
   </Ticket>
