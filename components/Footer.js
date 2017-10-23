@@ -22,7 +22,9 @@ const FooterTextBlock = styled.small`
   margin-bottom: ${props => (props.bottomMargin ? theme.gridSpacing / 2 : 0)}px;
 `;
 
-const Link = styled.a`color: ${theme.yellow};`;
+const Link = styled.a`
+  color: ${theme.yellow};
+`;
 
 export default () => (
   <Footer>
@@ -51,6 +53,10 @@ export default () => (
 
     <FooterTextBlock bottomMargin>
       <Organizers />
+    </FooterTextBlock>
+
+    <FooterTextBlock bottomMargin>
+      Thanks to Silvia Edelstein, the mom, for the tramendous help.
     </FooterTextBlock>
 
     <FooterTextBlock>
