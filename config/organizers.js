@@ -15,10 +15,4 @@ export default [
     hearsay: 'the eclectic motherfucker',
     hearsayRight: true,
   },
-  {
-    twitter: 'SilviaEdelstein',
-    title: 'Silvia Edelstein',
-    hearsay: 'the mom',
-    hearsayRight: true,
-  },
 ];
