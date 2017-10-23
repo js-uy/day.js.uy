@@ -56,7 +56,7 @@ export default () => (
     </FooterTextBlock>
 
     <FooterTextBlock bottomMargin>
-      Thanks to Silvia Edelstein, the mom, for the tramendous help.
+      Thanks to Silvia Edelstein for the tremendous help ❤️.
     </FooterTextBlock>
 
     <FooterTextBlock>
