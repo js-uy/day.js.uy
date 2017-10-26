@@ -119,7 +119,7 @@ export default () => (
           </Slider>
         )}
       </Desktop>
-      <Text>We will be announcing the full Line Up on Wednesday, Nov 1st. Keep an eye!</Text>
+      <Text>We will be announcing the full lineup on Wednesday, Nov 1st. Keep an eye!</Text>
     </Container>
   </Hero>
 );
