@@ -26,4 +26,9 @@ export const bronze = [
     url: 'https://moove-it.com',
     smaller: true,
   },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg',
+    url: 'https://www.ibm.com/uy-es/',
+    smaller: true,
+  },
 ];
