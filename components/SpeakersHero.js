@@ -9,16 +9,11 @@ import speakers from '../config/speakers';
 import theme from '../config/theme';
 
 const Container = styled.div`
+  align-items: center;
   color: ${theme.white};
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
-
-  @media (max-width: ${theme.mobileThreshold}px) {
-    padding: ${theme.gridSpacing}px;
-    max-width: 100vw;
-  }
 `;
 
 const Link = styled.a`color: ${theme.yellow};`;
@@ -50,12 +45,7 @@ const AvatarOverlay = styled.div`
 const SpeakerContainer = styled.figure`
   padding: 24px;
   background-color: ${theme.blue};
-  margin: 0 ${theme.gridSpacing / 2}px;
-
-  @media (max-width: ${theme.mobileThreshold}px) {
-    margin: 0;
-    margin-right: ${theme.gridSpacing}px;
-  }
+  margin-left: ${theme.gridSpacing}px;
 `;
 
 const Name = styled.p`
@@ -75,6 +65,13 @@ const Twitter = styled.a`
   }
 `;
 
+const SpeakerInfo = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Country = styled.span`margin-right: 10px;`;
+
 const SpeakersGlow = styled(Glow)`
   @media (max-width: ${theme.mobileThreshold}px) {
     transform: translateX(-5px);
@@ -82,13 +79,6 @@ const SpeakersGlow = styled(Glow)`
 `;
 
 const Text = styled.p`text-align: center;`;
-
-const SpeakerInfo = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Country = styled.span`margin-right: 10px;`;
 
 const Arrow = styled.figure`
   background-image: url('/static/arrow-${props => props.direction}.svg');
@@ -141,7 +131,7 @@ class Slider extends React.Component {
       <ViewPager
         style={{
           margin: `${theme.gridSpacing}px 0`,
-          width: `calc(100vw - ${2 * theme.gridSpacing}px)`,
+          width: `100vw`,
         }}
       >
         <Frame style={{ outline: 0 }}>
@@ -157,7 +147,7 @@ class Slider extends React.Component {
 export default class extends React.Component {
   render() {
     return (
-      <Hero backgroundColor={theme.black} id="speakers">
+      <Hero backgroundColor={theme.black} id="speakers" noPadding>
         <Container>
           <SpeakersGlow src="/static/speakers.svg" color={theme.lightblue} />
           <Desktop>
