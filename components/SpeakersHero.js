@@ -1,3 +1,4 @@
+import shuffle from 'shuffle-array';
 import styled from 'styled-components';
 import { ViewPager, Frame, Track, View } from 'react-view-pager';
 
@@ -12,11 +13,11 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   @media (max-width: ${theme.mobileThreshold}px) {
     padding: ${theme.gridSpacing}px;
     max-width: 100vw;
-    align-items: flex-start;
   }
 `;
 
@@ -65,9 +66,10 @@ const Name = styled.p`
 
 const Twitter = styled.a`
   color: ${theme.lightblue};
-  display: block;
+  display: inline-block;
   font-size: 0.95em;
   line-height: 1.5em;
+  margin-bottom: 5px;
   &::before {
     content: '@';
   }
@@ -81,45 +83,98 @@ const SpeakersGlow = styled(Glow)`
 
 const Text = styled.p`text-align: center;`;
 
-const Speaker = ({ name, twitter, avatar }) => (
+const SpeakerInfo = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Country = styled.span`margin-right: 10px;`;
+
+const Arrow = styled.figure`
+  background-image: url('/static/arrow-${props => props.direction}.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  height: 40px;
+  margin-left: 5px;
+  opacity: .9;
+  transition: all 250ms ease;
+  width: 40px;
+
+  :hover {
+    opacity: 1;
+  }
+
+  :active {
+    transform: scale(1.1);
+  }
+`;
+
+const ArrowContainer = styled.div`
+  display: flex;
+  position: absolute;
+  right: ${theme.horizontalPadding};
+  top: 25px;
+`;
+
+const Speaker = ({ name, twitter, avatar, country }) => (
   <SpeakerContainer>
     <AvatarContainer>
       <Avatar src={avatar} />
       <AvatarOverlay />
     </AvatarContainer>
     <Name>{name}</Name>
-    <Twitter href={`https://twitter.com/${twitter}`} target="_blank">
-      {twitter}
-    </Twitter>
+    <SpeakerInfo>
+      <Country>{country}</Country>
+      <Twitter href={`https://twitter.com/${twitter}`} target="_blank">
+        {twitter}
+      </Twitter>
+    </SpeakerInfo>
   </SpeakerContainer>
 );
 
-const Slider = ({ children, style }) => (
-  <ViewPager style={{ margin: `${theme.gridSpacing}px 0`, ...style }}>
-    <Frame style={{ outline: 0 }}>
-      <Track viewsToShow="auto" swipe="touch" align={0}>
-        {children}
-      </Track>
-    </Frame>
-  </ViewPager>
-);
+class Slider extends React.Component {
+  render() {
+    const { children, style, getRef } = this.props;
+    return (
+      <ViewPager
+        style={{
+          margin: `${theme.gridSpacing}px 0`,
+          width: `calc(100vw - ${2 * theme.gridSpacing}px)`,
+        }}
+      >
+        <Frame style={{ outline: 0 }}>
+          <Track viewsToShow="auto" align={0} ref={getRef}>
+            {children}
+          </Track>
+        </Frame>
+      </ViewPager>
+    );
+  }
+}
 
-export default () => (
-  <Hero backgroundColor={theme.black} id="speakers">
-    <Container>
-      <SpeakersGlow src="/static/speakers.svg" color={theme.lightblue} />
-      <Desktop style={{ alignSelf: 'center' }}>
-        {matches => (
-          <Slider style={{ alignSelf: matches ? 'center' : 'flex-start' }}>
-            {speakers.map(speaker => (
+export default class extends React.Component {
+  render() {
+    return (
+      <Hero backgroundColor={theme.black} id="speakers">
+        <Container>
+          <SpeakersGlow src="/static/speakers.svg" color={theme.lightblue} />
+          <Desktop>
+            <ArrowContainer>
+              <Arrow direction="left" onClick={() => this.track.prev()} />
+              <Arrow direction="right" onClick={() => this.track.next()} />
+            </ArrowContainer>
+          </Desktop>
+          <Slider getRef={c => (this.track = c)}>
+            {shuffle(speakers).map(speaker => (
               <View key={speaker.twitter}>
                 <Speaker {...speaker} />
               </View>
             ))}
           </Slider>
-        )}
-      </Desktop>
-      <Text>We will be announcing the full lineup on Wednesday, Nov 1st. Keep an eye!</Text>
-    </Container>
-  </Hero>
-);
+        </Container>
+      </Hero>
+    );
+  }
+}
