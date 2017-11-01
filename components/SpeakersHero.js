@@ -14,6 +14,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    padding: ${theme.gridSpacing}px 0;
+  }
 `;
 
 const Link = styled.a`color: ${theme.yellow};`;
