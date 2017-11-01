@@ -17,6 +17,7 @@ const Container = styled.div`
 
   @media (max-width: ${theme.mobileThreshold}px) {
     padding: ${theme.gridSpacing}px 0;
+    align-items: flex-start;
   }
 `;
 
@@ -78,6 +79,7 @@ const Country = styled.span`margin-right: 10px;`;
 
 const SpeakersGlow = styled(Glow)`
   @media (max-width: ${theme.mobileThreshold}px) {
+    margin-left: ${theme.gridSpacing}px;
     transform: translateX(-5px);
   }
 `;
