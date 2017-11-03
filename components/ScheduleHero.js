@@ -151,7 +151,7 @@ const Activity = ({ from, to, title, by, type, notes, last, short }) => (
   </ActivityContainer>
 );
 
-const Title = styled.img`height: 55px;`;
+const Title = styled.img`@media (max-width: ${theme.mobileThreshold}px) {height: 55px;}`;
 
 export default () => (
   <Hero id="schedule">
