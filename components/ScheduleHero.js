@@ -165,7 +165,7 @@ export default () => (
       </div>
       <div>
         <ScheduleHead>
-          <strong>Conferences</strong>
+          <strong>Conference</strong>
           <span>Saturday, November 25th</span>
         </ScheduleHead>
         {saturdayActivities.map((data, index) => (
