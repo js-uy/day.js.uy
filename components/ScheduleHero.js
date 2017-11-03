@@ -85,11 +85,11 @@ const ActivityTime = styled.span`
   line-height: 1em;
   margin-right: 10px;
   text-align: right;
-  width: 126px;
+  width: 125px;
 
   @media (max-width: ${theme.mobileThreshold}px) {
     font-size: 0.8em;
-    width: 100px;
+    width: 101px;
   }
 `;
 
