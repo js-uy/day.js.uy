@@ -85,7 +85,7 @@ const ActivityTime = styled.span`
   line-height: 1em;
   margin-right: 10px;
   text-align: right;
-  width: 125px;
+  width: 126px;
 
   @media (max-width: ${theme.mobileThreshold}px) {
     font-size: 0.8em;
