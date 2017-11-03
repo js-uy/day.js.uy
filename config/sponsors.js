@@ -32,3 +32,15 @@ export const bronze = [
     smaller: true,
   },
 ];
+
+export const supporter = [
+  {
+    image:
+      'https://cdn.auth0.com/website/assets/pages/press/img/resources/auth0-logo-monotone-black-f9bf0aaf29.svg',
+    url: 'https://auth0.com',
+  },
+  {
+    image: '/static/workandco.png',
+    url: 'https://work.co/',
+  },
+];
