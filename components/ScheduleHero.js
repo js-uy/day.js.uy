@@ -12,6 +12,11 @@ const Hero = styled.section`
   justify-content: center;
   padding: ${theme.gridSpacing}px ${theme.horizontalPadding};
   width: 100vw;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    align-items: flex-start;
+    padding: ${theme.gridSpacing}px;
+  }
 `;
 
 const SchedulesContainer = styled.div`
@@ -32,7 +37,6 @@ const SchedulesContainer = styled.div`
 
   @media (max-width: ${theme.mobileThreshold}px) {
     flex-direction: column;
-    padding: ${theme.gridSpacing}px;
   }
 `;
 
@@ -49,6 +53,7 @@ const ScheduleHead = styled.div`
 
   @media (max-width: ${theme.mobileThreshold}px) {
     font-size: 0.65em;
+    padding: 0 10px;
   }
 `;
 
@@ -143,9 +148,11 @@ const Activity = ({ from, to, title, by, type, notes, last, short }) => (
   </ActivityContainer>
 );
 
+const Title = styled.img`height: 55px;`;
+
 export default () => (
   <Hero id="schedule">
-    <img src="/static/schedule.svg" />
+    <Title src="/static/schedule.svg" />
     <SchedulesContainer>
       <div>
         <ScheduleHead>

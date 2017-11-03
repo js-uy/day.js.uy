@@ -78,7 +78,7 @@ export const saturday = [
     from: '11:15',
     to: '11:45',
     type: 'talk',
-    by: 'Diego Mura',
+    by: 'Diego Muracciole',
     title: 'A journey through React renderers',
     notes: '',
   },
