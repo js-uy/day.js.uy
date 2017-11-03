@@ -89,7 +89,7 @@ const ActivityTime = styled.span`
 
   @media (max-width: ${theme.mobileThreshold}px) {
     font-size: 0.8em;
-    width: 101px;
+    width: 102px;
   }
 `;
 
