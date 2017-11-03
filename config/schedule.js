@@ -109,8 +109,8 @@ export const saturday = [
     from: '13:30',
     to: '14:00',
     type: 'talk',
-    by: 'Federico Kauffman',
-    title: 'Web Bluetooth painkillers',
+    by: ' Samanta de Barros',
+    title: 'Progressive web apps',
     notes: '',
   },
   {
@@ -124,8 +124,8 @@ export const saturday = [
     from: '14:30',
     to: '15:00',
     type: 'talk',
-    by: 'Samanta de Barros',
-    title: 'Progressive web apps',
+    by: 'Federico Kauffman',
+    title: 'Web Bluetooth painkillers',
     notes: '',
   },
   {
