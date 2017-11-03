@@ -21,8 +21,9 @@ export const friday = [
     to: '20:00',
     type: 'workshop',
     by: 'WyeWorks',
-    title: 'GlimmerJS',
-    notes: 'In this workshop you will learn how to ship a real world app with GlimmerJS.',
+    title: 'Development of Web Components with GlimmerJS',
+    notes:
+      'In this workshop, we will show how to build a component to simulate the __soccer World Cup draw__, step by step.',
   },
   {
     from: '',
@@ -56,7 +57,7 @@ export const saturday = [
     to: '10:30',
     type: 'keynote',
     by: 'Álvaro Videla',
-    title: 'TBA',
+    title: 'Metaphors We Compute By',
     notes: '',
   },
   {
