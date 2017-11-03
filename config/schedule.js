@@ -87,7 +87,7 @@ export const saturday = [
     to: '12:15',
     type: 'talk',
     by: 'Jean Carlo Emer',
-    title: 'It is about types (and immutability) on Javascript',
+    title: 'Types: why you should care',
     notes: '',
   },
   {
