@@ -106,12 +106,15 @@ const ActivityText = styled.p`
 `;
 
 const ActivityTitle = ActivityText.extend`
-  font-weight: bold;
   color: white;
   font-size: 0.9em;
+  font-weight: bold;
+  position: relative;
+  top: -3px;
 
   @media (max-width: ${theme.mobileThreshold}px) {
     font-size: 0.68em;
+    top: -1px;
   }
 `;
 
