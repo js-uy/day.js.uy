@@ -23,7 +23,7 @@ export const friday = [
     by: 'WyeWorks',
     title: 'Development of Web Components with GlimmerJS',
     notes:
-      'In this workshop, we will show how to build a component to simulate the __soccer World Cup draw__, step by step.',
+      'In this workshop, we will show how to build a component to simulate the "soccer World Cup draw", step by step.',
   },
   {
     from: '',
