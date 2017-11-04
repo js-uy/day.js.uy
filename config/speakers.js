@@ -67,7 +67,7 @@ export default [
     twitter: 'tobillocrocante',
   },
   {
-    avatar: 'https://stuff.pote.io/pitch-a6pcXocaFU.jpg',
+    avatar: '/static/speaker-pote.jpg',
     country: '🇺🇾',
     name: 'pote',
     twitter: 'poteland',
