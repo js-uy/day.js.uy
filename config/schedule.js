@@ -72,7 +72,7 @@ export const saturday = [
     to: '11:15',
     type: 'talk',
     by: 'Karen Serfaty',
-    title: 'TBA',
+    title: 'Let’s build a virtual DOM',
     notes: '',
   },
   {
@@ -133,8 +133,8 @@ export const saturday = [
     from: '15:00',
     to: '15:30',
     type: 'talk',
-    by: 'TBA',
-    title: 'TBA',
+    by: 'pote',
+    title: 'GraphQL by a skeptical',
     notes: '',
   },
   {
