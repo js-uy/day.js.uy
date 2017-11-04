@@ -66,4 +66,10 @@ export default [
     name: 'Mariano Campo',
     twitter: 'tobillocrocante',
   },
+  {
+    avatar: 'https://stuff.pote.io/pitch-a6pcXocaFU.jpg',
+    country: '🇺🇾',
+    name: 'pote',
+    twitter: 'poteland',
+  },
 ];
