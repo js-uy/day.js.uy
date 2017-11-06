@@ -76,6 +76,10 @@ export default class extends React.PureComponent {
   getState(title) {
     const { state } = this.getTicket(title);
 
+    if (!this.getTicketsTotal(title)) {
+      return undefined;
+    }
+
     if (moment().isBefore(this.getStartAt(title))) {
       return 'upcoming';
     }
