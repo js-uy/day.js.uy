@@ -1,3 +1,5 @@
+import shuffle from 'shuffle-array';
+
 export const friday = [
   {
     from: '11:00',
@@ -48,7 +50,7 @@ export const saturday = [
     from: '9:30',
     to: '9:45',
     type: 'keynote',
-    by: 'Rodrigo Espinosa, Nacho Álvarez, Gabriel Chertok',
+    by: shuffle(['REC', 'Nacho Álvarez', 'Gabriel Chertok']).join(', '),
     title: 'Welcome to JSDayUY!',
     notes: '',
   },
@@ -134,7 +136,7 @@ export const saturday = [
     to: '15:30',
     type: 'talk',
     by: 'pote',
-    title: 'GraphQL by a skeptical',
+    title: 'GraphQL by a skeptic',
     notes: '',
   },
   {

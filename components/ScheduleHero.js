@@ -119,9 +119,9 @@ const ActivityTitle = ActivityText.extend`
 `;
 
 const ActivityBy = ActivityText.extend`
-  font-style: italic;
   color: ${theme.cyan};
   font-size: 0.8em;
+  font-style: italic;
 
   @media (max-width: ${theme.mobileThreshold}px) {
     font-size: 0.65em;
