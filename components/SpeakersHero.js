@@ -140,11 +140,15 @@ class Slider extends React.Component {
           width: `100vw`,
         }}
       >
-        <Frame style={{ outline: 0 }}>
-          <Track infinite viewsToShow="auto" align={0.487} ref={getRef}>
-            {children}
-          </Track>
-        </Frame>
+        <Mobile>
+          {matches => (
+            <Frame style={{ outline: 0 }}>
+              <Track infinite viewsToShow="auto" align={matches ? 0 : 0.487} ref={getRef}>
+                {children}
+              </Track>
+            </Frame>
+          )}
+        </Mobile>
       </ViewPager>
     );
   }
