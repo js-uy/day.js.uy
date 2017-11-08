@@ -141,7 +141,7 @@ export default ({ icon, title, price, state, startAt, ticketsTotal, ticketsSold,
     {state === 'off-sale' && <BuyNowButton disabled>/shrug</BuyNowButton>}
     {state === 'sold-out' && <BuyNowButton disabled>SOLD OUT</BuyNowButton>}
     <TicketsProgressBackground>
-      <TicketsProgress percentage={ticketsSold / ticketsTotal * 100} />
+      <TicketsProgress percentage={(Math.log10(ticketsSold / ticketsTotal) + 1) * 100} />
       <TicketProgressText>
         <strong>{ticketsTotal - ticketsSold}</strong> {title} Tickets available
       </TicketProgressText>
