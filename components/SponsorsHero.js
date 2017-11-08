@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import theme from '../config/theme';
 import Glow from './Glow';
 import Hero from './Hero';
-import { gold, silver, bronze } from '../config/sponsors';
+import { gold, silver, bronze, supporter } from '../config/sponsors';
 
 const Container = styled.div`
   color: ${theme.white};
@@ -26,7 +26,9 @@ const Text = styled.p`
   }
 `;
 
-const Link = styled.a`color: ${theme.yellow};`;
+const Link = styled.a`
+  color: ${theme.yellow};
+`;
 
 const SponsorsGlow = styled(Glow)`
   @media (max-width: ${theme.mobileThreshold}px) {
@@ -68,6 +70,14 @@ const SilverContainer = SponsorTypeContainer.extend`
 `;
 
 const BronzeContainer = SponsorTypeContainer.extend`
+  padding: ${theme.gridSpacing}px ${theme.gridColumnWidth * 2.5 + theme.gridSpacing * 2}px 0;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    padding: ${theme.gridSpacing}px 0 0;
+  }
+`;
+
+const SupporterContainer = SponsorTypeContainer.extend`
   padding: ${theme.gridSpacing}px ${theme.gridColumnWidth * 2.5 + theme.gridSpacing * 2}px 0;
 
   @media (max-width: ${theme.mobileThreshold}px) {
@@ -128,6 +138,21 @@ const Bronze = Sponsor.extend`
   }
 `;
 
+const Supporter = Sponsor.extend`
+  border-color: #ffffff;
+  height: 72px;
+  width: ${144 - sponsorSpacing}px;
+  margin-bottom: ${sponsorSpacing}px;
+
+  @media (max-width: ${theme.mobileThreshold}px) {
+    width: calc(50% - ${sponsorSpacing / 2}px);
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+`;
+
 export default () => (
   <Hero backgroundColor={theme.blue} id="sponsors" noHeight>
     <Container>
@@ -153,6 +178,13 @@ export default () => (
               <Bronze key={url} href={url} src={image} smaller={smaller} />
             ))}
           </BronzeContainer>
+        )}
+        {!!supporter.length && (
+          <SupporterContainer>
+            {supporter.map(({ url, image, smaller }) => (
+              <Supporter key={url} href={url} src={image} smaller={smaller} />
+            ))}
+          </SupporterContainer>
         )}
       </SponsorsContainer>
       <Text>

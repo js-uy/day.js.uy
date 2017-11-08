@@ -5,6 +5,7 @@ export const cyan = '#42efff';
 export const gridColumns = 12;
 export const gridColumnWidth = 70;
 export const gridSpacing = 30;
+export const bigGridSpacing = 104;
 export const headerHeight = 60;
 export const lightblue = '#42f0ff';
 export const lightgray = '#ccc';
@@ -23,6 +24,7 @@ export default {
   gridColumns,
   gridColumnWidth,
   gridSpacing,
+  bigGridSpacing,
   headerHeight,
   horizontalPadding,
   lightblue,

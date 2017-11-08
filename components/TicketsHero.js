@@ -7,9 +7,13 @@ import theme from '../config/theme';
 import { SOCKET_IO_URL } from '../config/constants';
 
 import Glow from './Glow';
-import Hero from './Hero';
+import BaseHero from './Hero';
 import Ticket from './Ticket';
 import { Mobile, Desktop } from './MediaQueries';
+
+const Hero = BaseHero.extend`
+  padding: ${theme.bigGridSpacing}px ${theme.horizontalPadding};
+`;
 
 const Container = styled.div`
   color: ${theme.white};
@@ -39,7 +43,9 @@ const TicketsContainer = styled.div`
   }
 `;
 
-const Spacing = styled.span`min-width: ${theme.gridSpacing}px;`;
+const Spacing = styled.span`
+  min-width: ${theme.gridSpacing}px;
+`;
 
 // Index the data by its title.
 const dataToState = data =>

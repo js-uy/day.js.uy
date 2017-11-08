@@ -10,12 +10,12 @@ const Hero = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: ${theme.gridSpacing}px ${theme.horizontalPadding};
+  padding: ${theme.bigGridSpacing}px ${theme.horizontalPadding};
   width: 100vw;
 
   @media (max-width: ${theme.mobileThreshold}px) {
     align-items: flex-start;
-    padding: ${theme.gridSpacing}px;
+    padding: ${theme.bigGridSpacing}px;
   }
 `;
 
@@ -151,7 +151,11 @@ const Activity = ({ from, to, title, by, type, notes, last, short }) => (
   </ActivityContainer>
 );
 
-const Title = styled.img`@media (max-width: ${theme.mobileThreshold}px) {height: 55px;}`;
+const Title = styled.img`
+  @media (max-width: ${theme.mobileThreshold}px) {
+    height: 55px;
+  }
+`;
 
 export default () => (
   <Hero id="schedule">
