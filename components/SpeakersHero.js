@@ -141,7 +141,7 @@ class Slider extends React.Component {
         }}
       >
         <Frame style={{ outline: 0 }}>
-          <Track viewsToShow="auto" align={0} ref={getRef}>
+          <Track infinite viewsToShow="auto" align={0.487} ref={getRef}>
             {children}
           </Track>
         </Frame>
