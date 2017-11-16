@@ -10,6 +10,15 @@ export const friday = [
     notes: 'A tour through the most beautiful places on the city of Montevideo.',
   },
   {
+    from: '14:30',
+    to: '16:30',
+    type: 'workshop',
+    by: 'IBM',
+    title: 'Node-RED',
+    notes:
+      'In this workshop you will learn flow-based programming for the Internet of Things, using Node-RED.',
+  },
+  {
     from: '16:00',
     to: '19:00',
     type: 'activity',
@@ -26,15 +35,6 @@ export const friday = [
     title: 'Development of Web Components with GlimmerJS',
     notes:
       'In this workshop, we will show how to build a component to simulate the "soccer World Cup draw", step by step.',
-  },
-  {
-    from: '',
-    to: '',
-    type: 'workshop',
-    by: 'IBM',
-    title: 'Node-RED',
-    notes:
-      'In this workshop you will learn flow-based programming for the Internet of Things, using Node-RED.',
   },
 ];
 

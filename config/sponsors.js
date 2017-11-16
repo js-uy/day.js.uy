@@ -45,4 +45,8 @@ export const supporter = [
     url: 'https://work.co/',
     smaller: true,
   },
+  {
+    image: '/static/mulesoft.png',
+    url: 'https://www.mulesoft.com/',
+  },
 ];
