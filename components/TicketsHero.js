@@ -11,9 +11,7 @@ import BaseHero from './Hero';
 import Ticket from './Ticket';
 import { Mobile, Desktop } from './MediaQueries';
 
-const Hero = BaseHero.extend`
-  padding: ${theme.bigGridSpacing}px ${theme.horizontalPadding};
-`;
+const Hero = BaseHero.extend`padding: ${theme.bigGridSpacing}px ${theme.horizontalPadding};`;
 
 const Container = styled.div`
   color: ${theme.white};
@@ -43,9 +41,7 @@ const TicketsContainer = styled.div`
   }
 `;
 
-const Spacing = styled.span`
-  min-width: ${theme.gridSpacing}px;
-`;
+const Spacing = styled.span`min-width: ${theme.gridSpacing}px;`;
 
 // Index the data by its title.
 const dataToState = data =>
@@ -153,17 +149,6 @@ export default class extends React.PureComponent {
               ticketsSold={this.getTicketsSold('Regular')}
               ticketsTotal={this.getTicketsTotal('Regular')}
               href="https://ti.to/js-day/2017/with/nc1w6uy7lxe"
-            />
-            <Ticket
-              title="Last Batch"
-              href={this.getHref('Last Batch')}
-              state={this.getState('Last Batch')}
-              price={this.getPrice('Last Batch')}
-              icon="/static/ticket-last-batch.svg"
-              startAt={this.getStartAt('Last Batch')}
-              ticketsSold={this.getTicketsSold('Last Batch')}
-              ticketsTotal={this.getTicketsTotal('Last Batch')}
-              href="https://ti.to/js-day/2017/with/b5xrbrlna58"
             />
             <Mobile>
               <Spacing />
