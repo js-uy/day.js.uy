@@ -190,7 +190,7 @@ export default () => (
       <Text>
         We're looking for partners to make this event possible.
         <br />
-        Interested in being an sponsor? <Link href="mailto:hola@js.uy">Send us an email</Link>!
+        Interested in being a sponsor? <Link href="mailto:hola@js.uy">Send us an email</Link>!
       </Text>
     </Container>
   </Hero>

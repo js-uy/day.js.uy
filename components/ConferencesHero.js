@@ -42,7 +42,7 @@ export default () => (
       <ConferenceGlow src="/static/conferences.svg" color={theme.lightblue} />
       <p>
         On the second day, diverse speakers will cover relevant topics from the JavaScript
-        ecosystem, cool libraries, fun experiments and more; an oportunity to learn about JS latest
+        ecosystem, cool libraries, fun experiments and more; an opportunity to learn about JS latest
         and greatest.
       </p>
     </Container>
